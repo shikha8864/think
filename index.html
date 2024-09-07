@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="output.css" />
+      <title>Document</title>
+      <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'trap';
+            src: url('./assests/Trap_V1.1/Trap-Black.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        body {
+            font-family: 'trap', sans-serif;
+        }
+
+        .wrapper, .wrapper-right {
+            width: 100%;
+            height: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .marquee, .marquee-right {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .marquee-group, .marquee-group-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }   
+
+        .marquee-group {
+            animation: scrollLeftToRight 30s linear infinite;
+        }
+
+        .marquee-group-right {
+            animation: scrollRightToLeft 30s linear infinite;
+        }
+
+        .marquee-group .card, .marquee-group-right .card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 40vw;
+        }
+
+        .marquee-group img, .marquee-group-right img {
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .marquee-group h3, .marquee-group-right h3 {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.25rem;
+        }
+
+        .marquee-group p, .marquee-group-right p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes scrollLeftToRight {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes scrollRightToLeft {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .scroller-container {
+                    display: flex;
+                    width: 100vw;
+                    height: auto;/* Adjust height to the size of the images */
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                .scroller-content {
+                    display: flex;
+                    gap: 150px;
+                    width: max-content;
+                    animation: scrolll 30s linear infinite;
+                }
+
+                
+
+        @keyframes scrolll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+
+        .scroller-container-right {
+            display: flex;
+            width: 100vw;
+            height: auto;/* Adjust height to the size of the images */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .scroller-content-right {
+            display: flex;
+            gap: 150px;
+            width: max-content;
+            animation: scrollr 50s linear infinite;
+        }
+
+        
+
+        @keyframes scrollr {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+         .right-horizontal-marquee {
+         width: 100vw;
+         overflow: hidden;
+         white-space: nowrap;
+         position: relative;
+         }
+         .right-marquee-content {
+         display: inline-flex;
+         gap: 20px;
+         white-space: nowrap;
+         animation: scroll 10s linear infinite;
+         }
+         .item {
+         white-space: nowrap;
+         color: white;
+         }
+         @keyframes scroll {
+         0% {
+         transform: translateX(20%);
+         }
+         100% {
+         transform: translateX(-20%);
+         }
+         }
+         .left-carousel-primary,
+         .left-carousel-secondary {
+         bottom: 10%;
+         left: 100%;
+         width: 100%;
+         overflow: hidden;
+         position: absolute;
+         white-space: nowrap;
+         }
+         .left-carousel-primary {
+         display: flex;
+         justify-content: space-around;
+         animation: scroll-horizontal 20s linear infinite;
+         }
+         .left-carousel-secondary {
+         animation: scroll-horizontal 20s linear infinite;
+         animation-delay: 10s;
+         }
+         @keyframes scroll-horizontal {
+         0% {
+         left: 100%;
+         }
+         100% {
+         left: -100%;
+         }
+         }
+         .container {
+            display: flex;
+            width: 100%;
+            height: 100vh; /* Each container takes full viewport height */
+            align-items: center;
+            padding: 100px;
+        }
+
+        .left-content-wrapper {
+            width: 50%;
+            overflow-y: scroll;
+            height: 100%;
+        }
+
+        .left-content {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .right-content {
+            width: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-content img {
+            width: 30%;
+            height: auto;
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: scale 0.5s ease-in-out;
+        }
+
+        /* Optional: To visually differentiate each section */
+        div::-webkit-scrollbar{
+            display: none;
+        }
+        
+      </style>
+   </head>
+   <body class="w-[100vw] h-auto overflow-x-hidden">
+      <nav class="w-full bg-[#080910] px-[8vw] py-5 flex justify-center md:justify-center lg:justify-between xl:justify-between items-center">
+         <img src="./assests/logo/Group 1.png" class="h-[7vh]" alt="logo" />
+         <div class="hidden md:hidden lg:block xl:block">
+            <ul class="flex gap-16 justify-start items-baseline text-white">
+               <li class="font-semibold">Home</li>
+               <li class="font-semibold">About Us</li>
+               <li class="font-semibold">Contact Us</li>
+               <li>
+                  <button class="text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
+                  Schedule A Call
+                  </button>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <!-- hero section -->
+      <main
+         class="w-[100vw] h-auto overflow-x-hidden bg-[#080910] flex flex-col justify-center items-center pt-[5vh] xl:pt-[27vh] pb-[12vh] relative">
+         <img src="./assests/logo/Rectangle 157.png" class="w-full absolute -top-14 md:-top-20 lg:-top-48 xl:-top-48" alt="gradient" />
+         <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]"><span class="hidden md:hidden lg:inline-block xl:inline-block">" </span> We Help Businesses</p>
+         <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]">
+            To Scale And Become The Top 1% <span class="hidden md:hidden lg:inline-block xl:inline-block">"</span>
+         </p>
+         <div class="h-auto w-auto relative z-10 mt-7">
+            <button class="text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
+            Schedule A Call
+            </button>
+            <div class="w-full h-full bg-[#28CBFF] absolute top-2 left-2 z-10"></div>
+         </div>
+         <div class="scroll-container mt-10 w-full">
+            <div class="left-carousel-primary">
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">SEO Services</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Content Writing</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Social Media marketing</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Video shoot services</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Web development</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
+               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Google AdWords</div>
+            </div>
+            <!-- Duplicate items for seamless effect -->
+            <!-- <div class=" left-carousel-primary left-carousel-secondary">
+               <div class=" item whitespace-nowrap text-xl font-semibold"">SEO Services</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">Content Writing</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">Social Media marketing</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">Video shoot services</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">Web development</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
+               <div class=" item whitespace-nowrap text-xl font-semibold"">Google AdWords</div>
+            </div> -->
+         </div>
+         </div>
+      </main>
+      <!-- clients -->
+       <div class="w-full h-auto py-10 bg-cover bg-no-repeat flex flex-col justify-center items-center" style="background-image: url('./assests/Grid.png');">
+          <div class="flex justify-center items-center">
+            <h1 class="text-xl md:text-xl lg:text-3xl xl:text-3xl font-bold">Scroll</h1>
+            <img src="./assests/Scroll.png" alt="scroll" class="h-[30px] md:h-[30px] lg:h-[50px] xl:h-[50px] w-auto">
+          </div>
+          <div class="my-10 py-10 bg-[#C9F2FF] w-[75%] md:w-[75%] lg:w-[88%] xl:w-[88%] mx-auto flex flex-col md:flex-col lg:flex-row xl:flex-row justify-around items-center md:text-center lg:text-start xl:text-start gap-10">
+            <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
+              <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[200px] text-center" data-end="11" id="counter1">0</div>
+              <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
+                <h2 class="text-2xl font-bold">SEO Projects</h2>
+                <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Rank Faster, Rank <br>Better</div>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
+              <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[200px] text-center" data-end="50" id="counter2">0</div>
+              <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
+                <h2 class="text-2xl font-bold">Websites</h2>
+                <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Modern Appeanling <br> websites to Kick-raise any <br> business</div>
+              </div>
+            </div>
+            <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
+              <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[250px] text-center" data-end="100" id="counter3">0</div>
+              <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
+                <h2 class="text-2xl font-bold">Clients</h2>
+                <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Modern Appeanling <br> websites to Kick-raise any <br> business</div>
+              </div>
+            </div>
+          </div>
+          <h1 class="hidden md:hidden lg:block xl:block font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#000]">
+            Our Clients
+         </h1>
+         <div class="hidden md:hidden lg:block xl:block">
+            <div class="scroller-container mt-12 ">
+                <div class="scroller-content">
+                    <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
+                    <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
+                    <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+                </div>
+            </div>
+         </div>
+      <div class="hidden md:hidden lg:block xl:block">
+        <div class="scroller-container-right mt-12">
+            <div class="scroller-content-right">
+                <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
+                <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
+                <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
+                <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+            </div>
+        </div>
+      </div>
+       </div>
+
+
+
+       <div class="w-full overflow-hidden">
+        <div class="w-full bg-[#080910] py-10 flex flex-col md:flex-col lg:flex-row xl:flex-row justify-between px-[8vw] items-start z-10">
+            <div class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[60px]">Supercharge your <br>Business</div>
+            <div>
+                <p class="text-lg md:text-lg lg:text-2xl xl:text-2xl text-[#fff]">Modern problems need modern solutions. <br> At Small Town Talks we provide hand- <br> tailored solutions for your business.</p>
+                <button class="text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
+                    Schedule A Call
+                    </button>
+            </div>
+        </div>
+
+        <!-- card animation -->
+
+
+        <div class="w-full h-auto bg-cover bg-no-repeat z-0 overflow-hidden hidden md:hidden lg:block xl:block" style="background-image: url('./assests/Frame\ 16.png');">
+            <div class="container">
+                <div class="left-content-wrapper h-full flex justify-start items-center">
+                    <div class="left-content text-white">
+                        <h2 class="text-6xl font-bold">Branding <br> Solutions</h2>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="./assests/item/illus-01.png" alt="Image 1" class="image-1">
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="left-content-wrapper">
+                    <div class="left-content">
+                        <h2 class="text-white text-7xl font-bold">Performance
+                            <br>
+                            Marketing</h2>
+
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="./assests/item/illus-02.png" alt="Image 2" class="image-2">
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="left-content-wrapper">
+                    <div class="left-content">
+                        <h2 class="text-7xl font-bold text-white">UGC Ads
+                            <br>
+                            Production </h2>
+
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="./assests/item/illus-04.png" alt="Image 3" class="image-3">
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="left-content-wrapper">
+                    <div class="left-content">
+                        <h2 class="text-7xl font-bold text-white">Advanced Meta &
+                                <br>
+                            Google Ads Funnel
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="./assests/item/illus-06.png" alt="Image 3" class="image-3">
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="left-content-wrapper">
+                    <div class="left-content">
+                        <h2 class="text-7xl font-bold text-white">SEO & content
+                            <br>
+                            optimization
+
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="./assests/item/illus-03.png" alt="Image 3" class="image-3">
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="left-content-wrapper">
+                    <div class="left-content">
+                        <h2 class="text-7xl font-bold text-white">Software
+                                <br>
+                            Development &
+                                <br>
+                            IT Solutions</h2>
+
+                    </div>
+                </div>
+                <div class="right-content">
+                    <img src="./assests/item/illus-05.png" alt="Image 3" class="image-3">
+                </div>
+            </div>
+
+            
+        </div>
+       </div>
+
+
+
+
+
+      <!-- our team -->
+      <div class=" w-full h-auto flex flex-col gap-10 bg-[#080910] py-10">
+           <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#28CBFF]">
+              Our Team
+           </h1>
+        <div class="w-full flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center gap-10">
+          <div>
+            <img src="./assests/Rectangle 152.png" alt="pic" class="w-[80%] md:w-[80%] lg:w-auto xl:w-auto mx-auto">
+            <div class="w-full flex flex-col justify-center items-center mt-3">
+              <p class="text-[#fff] font-bold text-2xl">Supriyo Mitra</p>
+              <p class="text-[#fff]/80 text-2xl">Founder, MD</p>
+            </div>
+          </div>
+          <div>
+            <img src="./assests/Rectangle 153.png" alt="pic"  class="w-[80%] md:w-[80%] lg:w-auto xl:w-auto mx-auto">
+            <div class="w-full flex flex-col justify-center items-center mt-3">
+              <p class="text-[#fff] font-bold text-2xl">Prnoy Dhar</p>
+              <p class="text-[#fff]/80 text-2xl">Texh, Co-Founder</p>
+            </div>
+          </div>
+      </div>
+      
+      </div>
+      <!-- about us -->
+      <div class=" w-full h-auto py-16 flex flex-col justify-center items-center gap-10 bg-[#080910]">
+         <div class="w-full h-auto pb-16 flex flex-col justify-center items-center gap-10 bg-[#080910]">
+            <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px]  text-center capitalize text-[#28CBFF]">Whats the town
+               Talking’<br>‘About us?
+            </h1>
+         </div>
+         <div class="wrapper">
+          <div class="marquee">
+              <div class="marquee-group">
+                  <!-- Repeat this block for a seamless effect -->
+                  <div class="card">
+                      <img src="./assests/boy1.avif" alt="avatar">
+                      <div>
+                          <h3>Jatin Vaghasiya</h3>
+                          <p>They did an outstanding job, highly recommended!</p>
+                      </div>
+                  </div>
+                  <!-- Add more cards here -->
+
+                  <div class="card">
+                    <img src="./assests/boy1.avif" alt="avatar">
+                    <div>
+                        <h3>Jatin Vaghasiya</h3>
+                        <p>They did an outstanding job, highly recommended!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                  <img src="./assests/boy1.avif" alt="avatar">
+                  <div>
+                      <h3>Jatin Vaghasiya</h3>
+                      <p>They did an outstanding job, highly recommended!</p>
+                  </div>
+              </div>
+
+              <div class="card">
+                <img src="./assests/boy1.avif" alt="avatar">
+                <div>
+                    <h3>Jatin Vaghasiya</h3>
+                    <p>They did an outstanding job, highly recommended!</p>
+                </div>
+            </div>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Marquee scrolling right to left -->
+      <div class="wrapper-right">
+          <div class="marquee-right">
+              <div class="marquee-group-right">
+                  <!-- Repeat this block for a seamless effect -->
+                  <div class="card">
+                      <img src="./assests/boy1.avif" alt="avatar">
+                      <div>
+                          <h3>Jatin Vaghasiya</h3>
+                          <p>They did an outstanding job, highly recommended!</p>
+                      </div>
+                  </div>
+                  <!-- Add more cards here -->
+
+                  <div class="card">
+                    <img src="./assests/boy1.avif" alt="avatar">
+                    <div>
+                        <h3>Jatin Vaghasiya</h3>
+                        <p>They did an outstanding job, highly recommended!</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                  <img src="./assests/boy1.avif" alt="avatar">
+                  <div>
+                      <h3>Jatin Vaghasiya</h3>
+                      <p>They did an outstanding job, highly recommended!</p>
+                  </div>
+              </div>
+
+              <div class="card">
+                <img src="./assests/boy1.avif" alt="avatar">
+                <div>
+                    <h3>Jatin Vaghasiya</h3>
+                    <p>They did an outstanding job, highly recommended!</p>
+                </div>
+            </div>
+              </div>
+          </div>
+      </div>
+      <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-10 text-center capitalize text-[#fff]">
+        Trusted By 100+ Clients
+     </h1>
+
+     <div class="wrapper">
+      <div class="marquee">
+          <div class="marquee-group">
+              <!-- Repeat this block for a seamless effect -->
+              <div class="card">
+                  <img src="./assests/boy1.avif" alt="avatar">
+                  <div>
+                      <h3>Jatin Vaghasiya</h3>
+                      <p>They did an outstanding job, highly recommended!</p>
+                  </div>
+              </div>
+              <!-- Add more cards here -->
+
+              <div class="card">
+                <img src="./assests/boy1.avif" alt="avatar">
+                <div>
+                    <h3>Jatin Vaghasiya</h3>
+                    <p>They did an outstanding job, highly recommended!</p>
+                </div>
+            </div>
+
+            <div class="card">
+              <img src="./assests/boy1.avif" alt="avatar">
+              <div>
+                  <h3>Jatin Vaghasiya</h3>
+                  <p>They did an outstanding job, highly recommended!</p>
+              </div>
+          </div>
+
+          <div class="card">
+            <img src="./assests/boy1.avif" alt="avatar">
+            <div>
+                <h3>Jatin Vaghasiya</h3>
+                <p>They did an outstanding job, highly recommended!</p>
+            </div>
+        </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Marquee scrolling right to left -->
+  <div class="wrapper-right">
+      <div class="marquee-right">
+          <div class="marquee-group-right">
+              <!-- Repeat this block for a seamless effect -->
+              <div class="card">
+                  <img src="./assests/boy1.avif" alt="avatar">
+                  <div>
+                      <h3>Jatin Vaghasiya</h3>
+                      <p>They did an outstanding job, highly recommended!</p>
+                  </div>
+              </div>
+              <!-- Add more cards here -->
+
+              <div class="card">
+                <img src="./assests/boy1.avif" alt="avatar">
+                <div>
+                    <h3>Jatin Vaghasiya</h3>
+                    <p>They did an outstanding job, highly recommended!</p>
+                </div>
+            </div>
+
+
+            <div class="card">
+              <img src="./assests/boy1.avif" alt="avatar">
+              <div>
+                  <h3>Jatin Vaghasiya</h3>
+                  <p>They did an outstanding job, highly recommended!</p>
+              </div>
+          </div>
+
+          <div class="card">
+            <img src="./assests/boy1.avif" alt="avatar">
+            <div>
+                <h3>Jatin Vaghasiya</h3>
+                <p>They did an outstanding job, highly recommended!</p>
+            </div>
+        </div>
+          </div>
+      </div>
+  </div>
+      </div>
+      <!-- schedule a call -->
+      <div class="w-full h-auto bg-cover bg-no-repeat py-16 flex flex-col justify-center items-center gap-10"
+         style="background-image: url('./assests/Grid.png');">
+         <h1 class="font-extrabold text-6xl leading-[65px] md text-center">Ready to Supercharge your Business?</h1>
+         <div class="relative inline-block">
+            <div class="absolute inset-0 translate-x-2 translate-y-2 bg-[#28CBFF]"></div>
+            <button class="relative px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
+            Schedule A Call
+            </button>
+         </div>
+      </div>
+      <!-- footer -->
+      <footer class="bg-[#080910] w-full h-auto text-white flex flex-col justify-center items-center pt-10 pb-3 gap-1">
+         <h1 class=" text-lg">Contact</h1>
+         <p>mail@email.com</p>
+         <p>+91 12345 67891 | +91 12345 67891</p>
+         <p class="w-full text-center">2972 Westheimer Rd. Santa Ana, Illinois 85486 </p>
+         <div class="flex justify-center items-center gap-6 mt-2">
+            <img src="./assests/social/Group 28.svg" alt="">
+            <img src="./assests/social/Vector.png" alt="">
+            <img src="./assests/social/Vector (1).png" alt="">
+            <img src="./assests/social/Vector (2).png" alt="">
+         </div>
+         <div class="relative py-3 mt-3 w-[80%]">
+            <div class="border-t-4 border-transparent relative z-10 w-full text-center text-white/50 text-sm">
+               © 2023 small town talks, All rights reserved | Terms & Conditions • Privacy Policy
+            </div>
+            <div class="absolute inset-0 top-0 h-[1px] "
+               style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,203,255,1) 50%, rgba(8,9,16,1) 100%);">
+            </div>
+         </div>
+      </footer>
+   </body>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+   <script>
+    //gsap
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Select each right-side image
+    const images = document.querySelectorAll(".right-content img");
+
+    // Loop through each section and create a ScrollTrigger for each
+    images.forEach((image, index) => {
+        ScrollTrigger.create({
+            trigger: image.closest('.container'), // Trigger the animation when the container comes into view
+            start: "top center",  // Start when the top of the section hits the center of the viewport
+            end: "bottom center", // End when the bottom of the section reaches the center
+            scrub: true,  // Smoothly transition the animations
+            onEnter: () => {
+                // Fade in the image when the section comes into view
+                gsap.to(image, { opacity: 1 });
+            },
+            onLeave: () => {
+                // Fade out the image when the section leaves the view
+                gsap.to(image, { opacity: 0 });
+            },
+            onEnterBack: () => {
+                // Fade in the image when scrolling back up
+                gsap.to(image, { opacity: 1 });
+            },
+            onLeaveBack: () => {
+                // Fade out the image when leaving upwards
+                gsap.to(image, { opacity: 0 });
+            }
+        });
+    });
+    // Function to handle counting
+    function startCounting(element, endValue) {
+        let count = 0;
+        const interval = 60; // Interval in milliseconds
+
+        function updateCounter() {
+            if (count < endValue) {
+                count++;
+                element.textContent = count;
+                setTimeout(updateCounter, interval);
+            }
+        }
+
+        updateCounter();
+    }
+
+    // Intersection Observer setup for multiple counters
+    const counters = document.querySelectorAll('.counter');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const endValue = parseInt(entry.target.getAttribute('data-end'));
+
+            if (entry.isIntersecting) {
+                // Reset text and start counting when it comes into view
+                entry.target.textContent = "0";
+                startCounting(entry.target, endValue);
+            } else {
+                // Remove data-counting attribute so it can count again later
+                entry.target.removeAttribute('data-counting');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+</script>
+</html>
