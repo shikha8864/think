@@ -2,10 +2,8 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="output.css" />
-       <script src="https://cdn.tailwindcss.com"></script>
-
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+      <script src="https://cdn.tailwindcss.com"></script>
       <title>Document</title>
       <style>
         * {
@@ -16,82 +14,49 @@
 
         @font-face {
             font-family: 'trap';
-            src: url('./assests/Trap_V1.1/Trap-Black.otf') format('opentype');
-            font-weight: normal;
+            src: url('./assests/Trap_V1.1/Trap-ExtraBold.otf') format('opentype');
+            font-weight: 900;
             font-style: normal;
         }
+
+        @font-face {
+            font-family: 'trap';
+            src: url('./assests/Trap_V1.1/Trap-Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'trap';
+            src: url('./assests/Trap_V1.1/Trap-Regular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+
 
         body {
             font-family: 'trap', sans-serif;
         }
 
-        .wrapper, .wrapper-right {
-            width: 100%;
-            height: fit-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
 
-        .marquee, .marquee-right {
-            display: flex;
-            overflow: hidden;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        .marquee-group, .marquee-group-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }   
-
-        .marquee-group {
-            animation: scrollLeftToRight 30s linear infinite;
-        }
-
-        .marquee-group-right {
-            animation: scrollRightToLeft 30s linear infinite;
-        }
-
-        .marquee-group .card, .marquee-group-right .card {
+        .card {
             display: flex;
             align-items: center;
             gap: 10px;
-            min-width: 40vw;
+            min-width: 400px;
+            height: 100px;
         }
 
-        .marquee-group img, .marquee-group-right img {
+        
+
+        .scroller-content img {
             height: 60px;
             border-radius: 50%;
         }
-
-        .marquee-group h3, .marquee-group-right h3 {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 1.25rem;
-        }
-
-        .marquee-group p, .marquee-group-right p {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        @keyframes scrollLeftToRight {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(100%);
-            }
-        }
-
-        @keyframes scrollRightToLeft {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        .scroller-content-right img {
+            height: 60px;
+            border-radius: 50%;
         }
 
         .scroller-container {
@@ -147,30 +112,6 @@
             }
         }
 
-         .right-horizontal-marquee {
-         width: 100vw;
-         overflow: hidden;
-         white-space: nowrap;
-         position: relative;
-         }
-         .right-marquee-content {
-         display: inline-flex;
-         gap: 20px;
-         white-space: nowrap;
-         animation: scroll 10s linear infinite;
-         }
-         .item {
-         white-space: nowrap;
-         color: white;
-         }
-         @keyframes scroll {
-         0% {
-         transform: translateX(20%);
-         }
-         100% {
-         transform: translateX(-20%);
-         }
-         }
          .left-carousel-primary,
          .left-carousel-secondary {
          bottom: 10%;
@@ -246,9 +187,9 @@
          <img src="./assests/logo/Group 1.png" class="h-[7vh]" alt="logo" />
          <div class="hidden md:hidden lg:block xl:block">
             <ul class="flex gap-16 justify-start items-baseline text-white">
-               <li class="font-semibold">Home</li>
-               <li class="font-semibold">About Us</li>
-               <li class="font-semibold">Contact Us</li>
+               <li class="font-normal"><a href="#home">Home</a></li>
+               <li class="font-normal"><a href="#about">About Us</a></li>
+               <li class="font-normal"><a href="#contact">Contact Us</a></li>
                <li>
                   <button class="text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
                   Schedule A Call
@@ -259,6 +200,7 @@
       </nav>
       <!-- hero section -->
       <main
+      id="home"
          class="w-[100vw] h-auto overflow-x-hidden bg-[#080910] flex flex-col justify-center items-center pt-[5vh] xl:pt-[27vh] pb-[12vh] relative">
          <img src="./assests/logo/Rectangle 157.png" class="w-full absolute -top-14 md:-top-20 lg:-top-48 xl:-top-48" alt="gradient" />
          <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]"><span class="hidden md:hidden lg:inline-block xl:inline-block">" </span> We Help Businesses</p>
@@ -273,32 +215,32 @@
          </div>
          <div class="scroll-container mt-10 w-full">
             <div class="left-carousel-primary">
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">SEO Services</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Content Writing</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Social Media marketing</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Video shoot services</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Web development</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">•</div>
-               <div class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl font-semibold"">Google AdWords</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl ">SEO Services</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">•</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">Content Writing</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">•</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">Social Media marketing</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">•</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">Video shoot services</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">•</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">Web development</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">•</div>
+               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl">Google AdWords</div>
             </div>
             <!-- Duplicate items for seamless effect -->
-            <!-- <div class=" left-carousel-primary left-carousel-secondary">
-               <div class=" item whitespace-nowrap text-xl font-semibold"">SEO Services</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">Content Writing</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">Social Media marketing</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">Video shoot services</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">Web development</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">•</div>
-               <div class=" item whitespace-nowrap text-xl font-semibold"">Google AdWords</div>
-            </div> -->
+            <div class=" left-carousel-primary left-carousel-secondary">
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">SEO Services</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">•</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">Content Writing</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">•</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">Social Media marketing</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">•</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">Video shoot services</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">•</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">Web development</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">•</div>
+                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-balance md:text-base lg:text-xl xl:text-xl"">Google AdWords</div>
+             </div>
          </div>
          </div>
       </main>
@@ -358,30 +300,30 @@
                 </div>
             </div>
          </div>
-      <div class="hidden md:hidden lg:block xl:block">
-        <div class="scroller-container-right mt-12">
-            <div class="scroller-content-right">
-                <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
-                <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
-                <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
-                <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+         <div class="hidden md:hidden lg:block xl:block">
+            <div class="scroller-container-right mt-12 ">
+                <div class="scroller-content-right">
+                    <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
+                    <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 42.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 43.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 44.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 45.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 46.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 47.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 48.png" alt="Image 1">
+                    <img class="h-auto w-auto" src="./assests/client/Group 49.png" alt="Image 1">              
+                    <img class="h-auto w-auto" src="./assests/client/Group 53.png" alt="Image 1">
+                </div>
             </div>
-        </div>
-      </div>
+         </div>
        </div>
 
 
@@ -487,7 +429,7 @@
         </div>
        </div>
 
-
+       
 
 
 
@@ -515,181 +457,231 @@
       
       </div>
       <!-- about us -->
-      <div class=" w-full h-auto py-16 flex flex-col justify-center items-center gap-10 bg-[#080910]">
+      <div class=" w-full h-auto py-16 flex flex-col justify-center items-center gap-10 bg-[#080910]" id="about">
          <div class="w-full h-auto pb-16 flex flex-col justify-center items-center gap-10 bg-[#080910]">
             <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px]  text-center capitalize text-[#28CBFF]">Whats the town
                Talking’<br>‘About us?
             </h1>
          </div>
-         <div class="wrapper">
-          <div class="marquee">
-              <div class="marquee-group">
-                  <!-- Repeat this block for a seamless effect -->
-                  <div class="card">
-                      <img src="./assests/boy1.avif" alt="avatar">
-                      <div>
-                          <h3>Jatin Vaghasiya</h3>
-                          <p>They did an outstanding job, highly recommended!</p>
-                      </div>
-                  </div>
-                  <!-- Add more cards here -->
-
-                  <div class="card">
+         <div class="scroller-container">
+            <div class="scroller-content">
+                <!-- Repeat this block for a seamless effect -->
+                <div class="card">
                     <img src="./assests/boy1.avif" alt="avatar">
                     <div>
-                        <h3>Jatin Vaghasiya</h3>
-                        <p>They did an outstanding job, highly recommended!</p>
+                        <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                        <p class="text-white">They did an outstanding job, highly recommended!</p>
                     </div>
                 </div>
-
+                <!-- Add more cards here -->
+       
                 <div class="card">
-                  <img src="./assests/boy1.avif" alt="avatar">
+                  <img src="./assests/boy2.avif" alt="avatar">
                   <div>
-                      <h3>Jatin Vaghasiya</h3>
-                      <p>They did an outstanding job, highly recommended!</p>
+                    <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                    <p class="text-white">They did an outstanding job, highly recommended!</p>
                   </div>
               </div>
-
+       
               <div class="card">
-                <img src="./assests/boy1.avif" alt="avatar">
+                <img src="./assests/boy3.avif" alt="avatar">
                 <div>
-                    <h3>Jatin Vaghasiya</h3>
-                    <p>They did an outstanding job, highly recommended!</p>
+                    <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
+                    <p class="text-white">Best in town, for marketing. Always available when needed.</p>
                 </div>
-            </div>
+                </div>
+       
+             <div class="card">
+              <img src="./assests/boy1.avif" alt="avatar">
+              <div>
+                <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+                <p class="text-white line-clamp-3">Professionalism and courtesy is what defines Smalltowntalks. Their friendly and knowledgeable team assures a pleasant experience to clients.
+                </p>
               </div>
           </div>
-      </div>
-  
-      <!-- Marquee scrolling right to left -->
-      <div class="wrapper-right">
-          <div class="marquee-right">
-              <div class="marquee-group-right">
-                  <!-- Repeat this block for a seamless effect -->
-                  <div class="card">
-                      <img src="./assests/boy1.avif" alt="avatar">
-                      <div>
-                          <h3>Jatin Vaghasiya</h3>
-                          <p>They did an outstanding job, highly recommended!</p>
-                      </div>
-                  </div>
-                  <!-- Add more cards here -->
-
-                  <div class="card">
+        </div>
+        <div class="card">
+            <img src="./assests/boy4.avif" alt="avatar">
+            <div>
+              <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+              <p class="text-white">The happy playce - they are very proactive and their ideas and creatives are also very nice 👍</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assests/boy2.avif" alt="avatar">
+            <div>
+              <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+              <p class="text-white">Best local advertisement in marketing and website development company.</p>
+            </div>
+        </div>
+         </div>
+         
+         <div class="scroller-container-right">
+            <div class="scroller-content-right">
+                <!-- Repeat this block for a seamless effect -->
+                <div class="card">
                     <img src="./assests/boy1.avif" alt="avatar">
                     <div>
-                        <h3>Jatin Vaghasiya</h3>
-                        <p>They did an outstanding job, highly recommended!</p>
+                        <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                        <p class="text-white">They did an outstanding job, highly recommended!</p>
                     </div>
                 </div>
-
-
+                <!-- Add more cards here -->
+       
                 <div class="card">
-                  <img src="./assests/boy1.avif" alt="avatar">
+                  <img src="./assests/boy2.avif" alt="avatar">
                   <div>
-                      <h3>Jatin Vaghasiya</h3>
-                      <p>They did an outstanding job, highly recommended!</p>
+                    <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                    <p class="text-white">They did an outstanding job, highly recommended!</p>
                   </div>
               </div>
-
+       
               <div class="card">
-                <img src="./assests/boy1.avif" alt="avatar">
+                <img src="./assests/boy3.avif" alt="avatar">
                 <div>
-                    <h3>Jatin Vaghasiya</h3>
-                    <p>They did an outstanding job, highly recommended!</p>
+                    <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
+                    <p class="text-white">Best in town, for marketing. Always available when needed.</p>
                 </div>
-            </div>
+                </div>
+       
+             <div class="card">
+              <img src="./assests/boy1.avif" alt="avatar">
+              <div>
+                <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+                <p class="text-white line-clamp-3">Professionalism and courtesy is what defines Smalltowntalks. Their friendly and knowledgeable team assures a pleasant experience to clients.
+                </p>
               </div>
           </div>
-      </div>
+        </div>
+        <div class="card">
+            <img src="./assests/boy4.avif" alt="avatar">
+            <div>
+              <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+              <p class="text-white">The happy playce - they are very proactive and their ideas and creatives are also very nice 👍</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./assests/boy2.avif" alt="avatar">
+            <div>
+              <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+              <p class="text-white">Best local advertisement in marketing and website development company.</p>
+            </div>
+        </div>
+         </div>
       <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-10 text-center capitalize text-[#fff]">
         Trusted By 100+ Clients
      </h1>
-
-     <div class="wrapper">
-      <div class="marquee">
-          <div class="marquee-group">
-              <!-- Repeat this block for a seamless effect -->
-              <div class="card">
-                  <img src="./assests/boy1.avif" alt="avatar">
-                  <div>
-                      <h3>Jatin Vaghasiya</h3>
-                      <p>They did an outstanding job, highly recommended!</p>
-                  </div>
-              </div>
-              <!-- Add more cards here -->
-
-              <div class="card">
+     <div class="scroller-container">
+        <div class="scroller-content">
+            <!-- Repeat this block for a seamless effect -->
+            <div class="card">
                 <img src="./assests/boy1.avif" alt="avatar">
                 <div>
-                    <h3>Jatin Vaghasiya</h3>
-                    <p>They did an outstanding job, highly recommended!</p>
+                    <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                    <p class="text-white">They did an outstanding job, highly recommended!</p>
                 </div>
             </div>
-
+            <!-- Add more cards here -->
+   
             <div class="card">
-              <img src="./assests/boy1.avif" alt="avatar">
+              <img src="./assests/boy2.avif" alt="avatar">
               <div>
-                  <h3>Jatin Vaghasiya</h3>
-                  <p>They did an outstanding job, highly recommended!</p>
+                <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                <p class="text-white">They did an outstanding job, highly recommended!</p>
               </div>
           </div>
-
+   
           <div class="card">
-            <img src="./assests/boy1.avif" alt="avatar">
+            <img src="./assests/boy3.avif" alt="avatar">
             <div>
-                <h3>Jatin Vaghasiya</h3>
-                <p>They did an outstanding job, highly recommended!</p>
+                <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
+                <p class="text-white">Best in town, for marketing. Always available when needed.</p>
             </div>
-        </div>
+            </div>
+   
+         <div class="card">
+          <img src="./assests/boy1.avif" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+            <p class="text-white line-clamp-3">Professionalism and courtesy is what defines Smalltowntalks. Their friendly and knowledgeable team assures a pleasant experience to clients.
+            </p>
           </div>
       </div>
+    </div>
+    <div class="card">
+        <img src="./assests/boy4.avif" alt="avatar">
+        <div>
+          <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+          <p class="text-white">The happy playce - they are very proactive and their ideas and creatives are also very nice 👍</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./assests/boy2.avif" alt="avatar">
+        <div>
+          <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+          <p class="text-white">Best local advertisement in marketing and website development company.</p>
+        </div>
+    </div>
+     </div>
+     <div class="scroller-container-right">
+        <div class="scroller-content-right">
+            <!-- Repeat this block for a seamless effect -->
+            <div class="card">
+                <img src="./assests/boy1.avif" alt="avatar">
+                <div>
+                    <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                    <p class="text-white">They did an outstanding job, highly recommended!</p>
+                </div>
+            </div>
+            <!-- Add more cards here -->
+   
+            <div class="card">
+              <img src="./assests/boy2.avif" alt="avatar">
+              <div>
+                <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                <p class="text-white">They did an outstanding job, highly recommended!</p>
+              </div>
+          </div>
+   
+          <div class="card">
+            <img src="./assests/boy3.avif" alt="avatar">
+            <div>
+                <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
+                <p class="text-white">Best in town, for marketing. Always available when needed.</p>
+            </div>
+            </div>
+   
+         <div class="card">
+          <img src="./assests/boy1.avif" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+            <p class="text-white line-clamp-3">Professionalism and courtesy is what defines Smalltowntalks. Their friendly and knowledgeable team assures a pleasant experience to clients.
+            </p>
+          </div>
+      </div>
+    </div>
+    <div class="card">
+        <img src="./assests/boy4.avif" alt="avatar">
+        <div>
+          <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+          <p class="text-white">The happy playce - they are very proactive and their ideas and creatives are also very nice 👍</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="./assests/boy2.avif" alt="avatar">
+        <div>
+          <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+          <p class="text-white">Best local advertisement in marketing and website development company.</p>
+        </div>
+    </div>
+     </div>
+     
   </div>
 
-  <!-- Marquee scrolling right to left -->
-  <div class="wrapper-right">
-      <div class="marquee-right">
-          <div class="marquee-group-right">
-              <!-- Repeat this block for a seamless effect -->
-              <div class="card">
-                  <img src="./assests/boy1.avif" alt="avatar">
-                  <div>
-                      <h3>Jatin Vaghasiya</h3>
-                      <p>They did an outstanding job, highly recommended!</p>
-                  </div>
-              </div>
-              <!-- Add more cards here -->
-
-              <div class="card">
-                <img src="./assests/boy1.avif" alt="avatar">
-                <div>
-                    <h3>Jatin Vaghasiya</h3>
-                    <p>They did an outstanding job, highly recommended!</p>
-                </div>
-            </div>
-
-
-            <div class="card">
-              <img src="./assests/boy1.avif" alt="avatar">
-              <div>
-                  <h3>Jatin Vaghasiya</h3>
-                  <p>They did an outstanding job, highly recommended!</p>
-              </div>
-          </div>
-
-          <div class="card">
-            <img src="./assests/boy1.avif" alt="avatar">
-            <div>
-                <h3>Jatin Vaghasiya</h3>
-                <p>They did an outstanding job, highly recommended!</p>
-            </div>
-        </div>
-          </div>
-      </div>
   </div>
       </div>
       <!-- schedule a call -->
-      <div class="w-full h-auto bg-cover bg-no-repeat py-16 flex flex-col justify-center items-center gap-10"
+      <div id="contact" class="w-full h-auto bg-cover bg-no-repeat py-16 flex flex-col justify-center items-center gap-10"
          style="background-image: url('./assests/Grid.png');">
          <h1 class="font-extrabold text-6xl leading-[65px] md text-center">Ready to Supercharge your Business?</h1>
          <div class="relative inline-block">
@@ -780,7 +772,7 @@
 
             if (entry.isIntersecting) {
                 // Reset text and start counting when it comes into view
-                entry.target.textContent = "0";
+                entry.target.textContent = "10";
                 startCounting(entry.target, endValue);
             } else {
                 // Remove data-counting attribute so it can count again later
