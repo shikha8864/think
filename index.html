@@ -46,6 +46,7 @@
             align-items: center;
             gap: 10px;
             min-width: 400px;
+            max-width: 400px;
             height: 100px;
         }
 
@@ -54,10 +55,6 @@
         .scroller-content img {
             height: 60px;
         }
-        .scroller-content-right img {
-            height: 60px;
-        }
-
         .scroller-container {
                     display: flex;
                     width: 100vw;
@@ -65,13 +62,40 @@
                     overflow: hidden;
                     position: relative;
                 }
+        .scroller-content {
+            display: flex;
+            gap: 50px;
+            width: max-content;
+            animation: scrolll 15s linear infinite;
+        }
+        .scroller-content-right img {
+            height: 60px;
+        }
+        .scroller-content-right {
+            display: flex;
+            gap: 50px;
+            width: max-content;
+            animation: scrollr 15s linear infinite;
+        }
+        .scroller-content-left-avatar img {
+            height: 60px;
+        }
+        .scroller-content-right-avatar img {
+            height: 60px;
+        }
 
-                .scroller-content {
-                    display: flex;
-                    gap: 50px;
-                    width: max-content;
-                    animation: scrolll 40s linear infinite;
-                }
+        .scroller-content-left-avatar {
+            display: flex;
+            gap: 50px;
+            width: max-content;
+            animation: scrolll 20s linear infinite;
+        }
+        .scroller-content-right-avatar {
+            display: flex;
+            gap: 50px;
+            width: max-content;
+            animation: scrollr 20s linear infinite;
+        }
 
                 
 
@@ -84,36 +108,19 @@
             }
         }
         
-        .round-image img{
-            border-radius: 50%;
-        }
-
-        .scroller-container-right {
-            display: flex;
-            width: 100vw;
-            height: auto;/* Adjust height to the size of the images */
-            overflow: hidden;
-            position: relative;
-        }
-
-        .scroller-content-right {
-            display: flex;
-            gap: 50px;
-            width: max-content;
-            animation: scrollr 50s linear infinite;
-        }
-
         
-
         @keyframes scrollr {
             0% {
-                transform: translateX(-100%);
+                transform: translateX(0%);
             }
             100% {
                 transform: translateX(100%);
             }
         }
-
+        
+        .round-image img{
+            border-radius: 50%;
+        }
          .left-carousel-primary,
          .left-carousel-secondary {
          bottom: 10%;
@@ -289,41 +296,41 @@
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
                 </div>
             </div>
          </div>
          
          <div class="">
-            <div class="scroller-container-right mt-12 ">
+            <div class="scroller-container mt-12 ">
                 <div class="scroller-content-right">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
                 </div>
             </div>
          </div>
@@ -331,22 +338,22 @@
           <div class="sm:hidden">
             <div class="scroller-container mt-12 ">
                 <div class="scroller-content">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
+                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
                 </div>
             </div>
          </div>
@@ -354,22 +361,22 @@
          <div class="sm:hidden">
             <div class="scroller-container-right mt-12 ">
                 <div class="scroller-content-right">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
                 </div>
             </div>
          </div>
@@ -377,67 +384,67 @@
           <div class="sm:hidden">
             <div class="scroller-container mt-12 ">
                 <div class="scroller-content">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
                 </div>
             </div>
          </div> 
          <div class="sm:hidden">
             <div class="scroller-container-right mt-12 ">
                 <div class="scroller-content-right">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
                 </div>
             </div>
          </div>
 
           <div class="sm:hidden">
-            <div class="scroller-container mt-12 ">
-                <div class="scroller-content">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+              <div class="scroller-content">
+                  <div class="scroller-container mt-12 ">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/image 5234   354.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                        <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                 </div>
             </div>
          </div>
@@ -603,7 +610,7 @@
             </h1>
          </div>
          <div class="scroller-container">
-            <div class="scroller-content round-image">
+            <div class="scroller-content-left-avatar round-image">
                 <!-- Repeat this block for a seamless effect -->
                 <div class="card">
                     <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
@@ -722,7 +729,7 @@
         </div>
          
          <div class="scroller-container-right">
-            <div class="scroller-content-right round-image">
+            <div class="scroller-content-right-avatar round-image">
                 <div class="card">
                     <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
                     <div>
@@ -841,7 +848,7 @@
         Trusted By 100+ Clients
      </h1>
      <div class="scroller-container">
-        <div class="scroller-content round-image">
+        <div class="scroller-content-left-avatar round-image">
             <!-- Repeat this block for a seamless effect -->
             <div class="card">
                 <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
@@ -957,7 +964,7 @@
             </div>
      </div>
      <div class="scroller-container-right">
-        <div class="scroller-content-right round-image">
+        <div class="scroller-content-right-avatar round-image">
             <!-- Repeat this block for a seamless effect -->
             <div class="card">
                 <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
