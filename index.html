@@ -5,6 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="output.css" />
       <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <title>Document</title>
       <style>
         * {
@@ -44,80 +45,82 @@
         .card {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
             min-width: 400px;
             max-width: 400px;
             height: 100px;
         }
 
-        
+        .card img {
+            height: 60px;
+        }
 
         .scroller-content img {
             height: 60px;
         }
-        .scroller-container {
-                    display: flex;
-                    width: 100vw;
-                    height: auto;/* Adjust height to the size of the images */
-                    overflow: hidden;
-                    position: relative;
-                }
-        .scroller-content {
-            display: flex;
-            gap: 50px;
-            width: max-content;
-            animation: scrolll 15s linear infinite;
-        }
-        .scroller-content-right img {
-            height: 60px;
-        }
-        .scroller-content-right {
-            display: flex;
-            gap: 50px;
-            width: max-content;
-            animation: scrollr 15s linear infinite;
-        }
-        .scroller-content-left-avatar img {
-            height: 60px;
-        }
-        .scroller-content-right-avatar img {
-            height: 60px;
-        }
+        .marquee-row{
+  width: 100%;
+  overflow-x: hidden;
+}
+.marquee-block {
+    position: relative;
+    display: flex;
+    width: 100%;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    justify-content: space-between;
+}
 
-        .scroller-content-left-avatar {
-            display: flex;
-            gap: 50px;
-            width: max-content;
-            animation: scrolll 20s linear infinite;
-        }
-        .scroller-content-right-avatar {
-            display: flex;
-            gap: 50px;
-            width: max-content;
-            animation: scrollr 20s linear infinite;
-        }
+/* Media Queries for Screen Size Adjustments */
 
-                
+/* Large screens (desktop) */
+@media (min-width: 1200px) {
+    .marquee-block {
+        animation-duration: 20s; /* Slower animation for large screens */
+    }
+}
 
-        @keyframes scrolll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-        
-        
-        @keyframes scrollr {
-            0% {
-                transform: translateX(0%);
-            }
-            100% {
-                transform: translateX(100%);
-            }
-        }
-        
+/* Medium screens (tablets, landscape phones) */
+@media (min-width: 768px) and (max-width: 1199px) {
+    .marquee-block {
+        animation-duration: 15s; /* Default animation duration for medium screens */
+    }
+}
+
+/* Small screens (portrait phones) */
+@media (max-width: 767px) {
+    .marquee-block {
+        animation-duration: 10s; /* Faster animation for small screens */
+    }
+}
+
+/* Extra small screens (very small devices) */
+@media (max-width: 480px) {
+    .marquee-block {
+        animation-duration: 4s; /* Fastest animation for extra small screens */
+    }
+}
+
+.marquee-item-list{
+ display: inline-flex;
+}
+.marquee-item-list img{
+    height: 80px;
+padding:10px 20px 0 20px ;
+margin-top: 20px;
+}
+.marquee1{animation-name: marquee1;}
+.marquee2{animation-name: marquee2;}
+@keyframes marquee1 {
+  0% { left: 0; }
+  100% {left: -100%;}
+}
+@keyframes marquee2 {
+  100% { left: 0; }
+  0% {left: -100%;}
+}
         .round-image img{
             border-radius: 50%;
         }
@@ -191,7 +194,7 @@
         
       </style>
    </head>
-   <body class="w-[100vw] h-auto overflow-x-hidden">
+   <body class="max-w-[100vw] h-auto overflow-x-hidden">
       <nav class="w-full bg-[#080910] px-[8vw] py-5 flex justify-center md:justify-center lg:justify-between xl:justify-between items-center">
          <img src="./assests/logo/Group 1.png" class="h-[7vh]" alt="logo" />
          <div class="hidden md:hidden lg:block xl:block">
@@ -289,9 +292,9 @@
           <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#000]">
             Our Clients
          </h1>
-         <div class="">
-            <div class="scroller-container mt-12 ">
-                <div class="scroller-content">
+         <div class="marquee-row">
+            <div class="marquee-block marquee1">
+                <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
@@ -312,9 +315,9 @@
             </div>
          </div>
          
-         <div class="">
-            <div class="scroller-container mt-12 ">
-                <div class="scroller-content-right">
+         <div class="marquee-row">
+            <div class="marquee-block marquee2">
+                <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
@@ -335,9 +338,9 @@
             </div>
          </div>
 
-          <div class="sm:hidden">
-            <div class="scroller-container mt-12 ">
-                <div class="scroller-content">
+         <div class="marquee-row sm:hidden">
+            <div class="marquee-block marquee1">
+                <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
@@ -358,9 +361,9 @@
             </div>
          </div>
 
-         <div class="sm:hidden">
-            <div class="scroller-container-right mt-12 ">
-                <div class="scroller-content-right">
+         <div class="sm:hidden marquee-row">
+            <div class="marquee-block marquee2">
+                <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
@@ -381,9 +384,9 @@
             </div>
          </div>
 
-          <div class="sm:hidden">
-            <div class="scroller-container mt-12 ">
-                <div class="scroller-content">
+         <div class="marquee-row sm:hidden">
+            <div class="marquee-block marquee1">
+                <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
@@ -403,9 +406,9 @@
                 </div>
             </div>
          </div> 
-         <div class="sm:hidden">
-            <div class="scroller-container-right mt-12 ">
-                <div class="scroller-content-right">
+         <div class="marquee-row sm:hidden">
+            <div class="marquee-block marquee2">
+                <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
                     <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
@@ -426,9 +429,9 @@
             </div>
          </div>
 
-          <div class="sm:hidden">
-              <div class="scroller-content">
-                  <div class="scroller-container mt-12 ">
+         <div class="marquee-row sm:hidden">
+            <div class="marquee-block marquee1">
+                <div class="marquee-item-list">
                         <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
                         <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
                         <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
@@ -609,8 +612,10 @@
                Talking’<br>‘About us?
             </h1>
          </div>
-         <div class="scroller-container">
-            <div class="scroller-content-left-avatar round-image">
+
+         <div class="marquee-row">
+          <div class="marquee-block marquee1">
+              <div class="marquee-item-list round-image">
                 <!-- Repeat this block for a seamless effect -->
                 <div class="card">
                     <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
@@ -724,12 +729,13 @@
                     </div>
                   </div>
                   
-                  
+          </div>
         </div>
         </div>
          
-         <div class="scroller-container-right">
-            <div class="scroller-content-right-avatar round-image">
+        <div class="marquee-row">
+          <div class="marquee-block marquee2">
+              <div class="marquee-item-list round-image">
                 <div class="card">
                     <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
                     <div>
@@ -841,14 +847,15 @@
                       <p class="text-white">Great service! Their team is always available when needed.</p>
                     </div>
                   </div>
-          
+                  </div>
                 </div>
             </div>
       <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-10 text-center capitalize text-[#fff]">
         Trusted By 100+ Clients
      </h1>
-     <div class="scroller-container">
-        <div class="scroller-content-left-avatar round-image">
+     <div class="marquee-row">
+      <div class="marquee-block marquee1">
+          <div class="marquee-item-list round-image">
             <!-- Repeat this block for a seamless effect -->
             <div class="card">
                 <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
@@ -962,9 +969,11 @@
                 </div>
               </div>
             </div>
+        </div>
      </div>
-     <div class="scroller-container-right">
-        <div class="scroller-content-right-avatar round-image">
+     <div class="marquee-row">
+      <div class="marquee-block marquee2">
+          <div class="marquee-item-list round-image">
             <!-- Repeat this block for a seamless effect -->
             <div class="card">
                 <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
@@ -1077,6 +1086,7 @@
                   <p class="text-white">Great service! Their team is always available when needed.</p>
                 </div>
               </div>
+          </div>
      </div>
   </div>
 
@@ -1184,5 +1194,12 @@
     }, { threshold: 0.5 });
 
     counters.forEach(counter => observer.observe(counter));
+
+    var elements = $('ul.marquee-item-list li').length;
+for(var i=0;i < elements; i++){
+ $(".marquee-item-list").clone().prependTo( ".marquee-block" );
+};
+var liEle = [];
+var liEle = $(".marquee-item-list li");
 </script>
 </html>
