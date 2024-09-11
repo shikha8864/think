@@ -3,7 +3,6 @@
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="output.css" />
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <title>Document</title>
@@ -44,12 +43,13 @@
 
         .card {
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             gap: 10px;
+            margin-right: 60px;
             min-width: 400px;
             max-width: 400px;
-            height: 100px;
+            text-wrap: wrap;
         }
 
         .card img {
@@ -59,68 +59,79 @@
         .scroller-content img {
             height: 60px;
         }
-        .marquee-row{
-  width: 100%;
-  overflow-x: hidden;
-}
-.marquee-block {
-    position: relative;
-    display: flex;
-    width: 100%;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    justify-content: space-between;
-}
+        .marquee-row {
+            width: 100vw;
+            overflow-x: hidden;
+        }
+        .marquee-block {
+            position: relative;
+            display: flex;
+            width: 100%; /* Set width to ensure items scroll off the screen */
+            animation-duration: 15s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            justify-content: flex-start; /* Ensure items scroll in a row */
+        }
+
+        /* Adjust the width for marquee-item-list to ensure scrolling works correctly */
+        .marquee-item-list {
+            display: inline-flex;
+            width: 100%;
+        }
+
+        .marquee-item-list img {
+            height: 80px;
+            padding: 10px 20px 0 20px;
+            margin-top: 20px;
+        }
+
+        .marquee1 { 
+            animation-name: marquee1; 
+        }
+        .marquee2 { 
+            animation-name: marquee2; 
+        }
+
+        @keyframes marquee1 {
+            0% { 
+                transform: translateX(0); 
+            }
+            100% { 
+                transform: translateX(-50%); /* Scroll by half the width */
+            }
+        }
+
+        @keyframes marquee2 {
+            100% { 
+                transform: translateX(0); 
+            }
+            0% { 
+                transform: translateX(-50%); 
+            }
+        }
 
 /* Media Queries for Screen Size Adjustments */
-
-/* Large screens (desktop) */
 @media (min-width: 1200px) {
     .marquee-block {
-        animation-duration: 20s; /* Slower animation for large screens */
+        animation-duration: 20s;
     }
 }
-
-/* Medium screens (tablets, landscape phones) */
 @media (min-width: 768px) and (max-width: 1199px) {
     .marquee-block {
-        animation-duration: 15s; /* Default animation duration for medium screens */
+        animation-duration: 15s;
     }
 }
-
-/* Small screens (portrait phones) */
 @media (max-width: 767px) {
     .marquee-block {
-        animation-duration: 10s; /* Faster animation for small screens */
+        animation-duration: 10s;
     }
 }
-
-/* Extra small screens (very small devices) */
 @media (max-width: 480px) {
     .marquee-block {
-        animation-duration: 4s; /* Fastest animation for extra small screens */
+        animation-duration: 3s; /* Adjust speed for smaller screens */
     }
 }
 
-.marquee-item-list{
- display: inline-flex;
-}
-.marquee-item-list img{
-    height: 80px;
-padding:10px 20px 0 20px ;
-margin-top: 20px;
-}
-.marquee1{animation-name: marquee1;}
-.marquee2{animation-name: marquee2;}
-@keyframes marquee1 {
-  0% { left: 0; }
-  100% {left: -100%;}
-}
-@keyframes marquee2 {
-  100% { left: 0; }
-  0% {left: -100%;}
-}
         .round-image img{
             border-radius: 50%;
         }
@@ -191,7 +202,94 @@ margin-top: 20px;
         div::-webkit-scrollbar{
             display: none;
         }
-        
+      
+
+@keyframes slide {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slider {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+.logos {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+
+
+.logos:hover .logos-slide-left {
+  animation-play-state: paused;
+}
+
+.logos:hover .logos-slide-right {
+  animation-play-state: paused;
+}
+
+.logos-slide-right {
+  display: inline-block;
+  animation:  slider infinite linear;
+}
+
+.logos-slide-left {
+  display: inline-block;
+  animation:  slide infinite linear;
+}
+
+@media (min-width: 1200px) {
+  .logos-slide-right, .logos-slide-left{
+        animation-duration: 30s;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+  .logos-slide-right, .logos-slide-left {
+        animation-duration: 15s;
+    }
+}
+@media (max-width: 767px) {
+  .logos-slide-right, .logos-slide-left {
+        animation-duration: 35s;
+    }
+}
+@media (max-width: 480px) {
+  .logos-slide-right, .logos-slide-left{
+        animation-duration: 20s; /* Adjust speed for smaller screens */
+    }
+}
+
+.logos-slide-left img {
+  height: 50px;
+}
+
+.logos-slide-right img {
+  height: 50px;
+}
       </style>
    </head>
    <body class="max-w-[100vw] h-auto overflow-x-hidden">
@@ -292,7 +390,49 @@ margin-top: 20px;
           <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#000]">
             Our Clients
          </h1>
-         <div class="marquee-row">
+
+         <div class="logos w-full overflow-hidden">
+          <div class="logos-slide-right flex gap-16 w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
+          </div>
+         </div>
+         <div class="logos mt-10  w-full overflow-hidden">
+          <div class="logos-slide-left flex gap-16 w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+            <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
+            <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
+              <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+              <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+          </div>
+      </div>
+
+         <!-- <div class="marquee-row">
             <div class="marquee-block marquee1">
                 <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
@@ -313,32 +453,10 @@ margin-top: 20px;
                     <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
                 </div>
             </div>
-         </div>
          
-         <div class="marquee-row">
-            <div class="marquee-block marquee2">
-                <div class="marquee-item-list">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
-                    <img class="min-h-[80px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                </div>
-            </div>
-         </div>
-
-         <div class="marquee-row sm:hidden">
+            
+          </div> -->
+         <!-- <div class="marquee-row sm:hidden">
             <div class="marquee-block marquee1">
                 <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
@@ -450,7 +568,7 @@ margin-top: 20px;
                         <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
                 </div>
             </div>
-         </div>
+         </div> -->
 
        </div>
 
@@ -458,7 +576,7 @@ margin-top: 20px;
 
        <div class="w-full overflow-hidden">
         <div class="w-full bg-[#080910] py-10 flex flex-col md:flex-col lg:flex-row xl:flex-row justify-between px-[8vw] items-start z-10">
-            <div class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[60px]">Supercharge your <br>Business</div>
+            <div class="font-extrabold text-[39.6px] md:text-[39.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[46px] md:leading-[46px] lg:leading-[75px] xl:leading-[75px]">Supercharge your <br>Business</div>
             <div>
                 <p class="text-lg md:text-lg lg:text-2xl xl:text-2xl text-[#fff]">Modern problems need modern solutions. <br> At Small Town Talks we provide hand- <br> tailored solutions for your business.</p>
                 <button class="text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
@@ -583,7 +701,7 @@ margin-top: 20px;
       </div>
       <div id="layer4" class="-screen  top-0 sticky p-4 bg-[#080910]">
         <img src="./assests/item/illus-05.png"  alt="">
-        <p class="text-4xl py-4 font-bold">Software Development & IT Solutions</p>
+        <p class="text-4xl py-4 font-bold">ASoftware Development & IT Solutions</p>
     </div>
     </div>
        
@@ -621,9 +739,8 @@ margin-top: 20px;
             </h1>
          </div>
 
-         <div class="marquee-row">
-          <div class="marquee-block marquee1">
-              <div class="marquee-item-list round-image">
+         <div class="logos  w-full overflow-hidden round-image">
+          <div class="logos-slide-left flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
                 <!-- Repeat this block for a seamless effect -->
                 
                 <div class="card">
@@ -736,14 +853,11 @@ margin-top: 20px;
                       <p class="text-white">Great service! Their team is always available when needed.</p>
                     </div>
                   </div>
-                  
+                  </div>
           </div>
-        </div>
-        </div>
          
-        <div class="marquee-row">
-          <div class="marquee-block marquee2">
-              <div class="marquee-item-list round-image">
+        <div class="logos mt-10  w-full overflow-hidden round-image">
+          <div class="logos-slide-right flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
                 <div class="card">
                   <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
                   <div>
@@ -857,47 +971,25 @@ margin-top: 20px;
                   </div>
                   </div>
                 </div>
-            </div>
+           
       <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-10 text-center capitalize text-[#fff]">
         Trusted By 100+ Clients
      </h1>
-     <div class="marquee-row">
-      <div class="marquee-block marquee1">
-          <div class="marquee-item-list round-image">
+     <div class="logos  w-full overflow-hidden round-image">
+      <div class="logos-slide-left flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
             <!-- Repeat this block for a seamless effect -->
+            
             <div class="card">
-              <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
+              <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
               <div>
-                <h3 class="text-white/50 text-lg">Fardin Khan</h3>
-                <p class="text-white">Best in local marketing and website development!</p>
+                <h3 class="text-white/50 text-lg">Priya Shah</h3>
+                <p class="text-white">Exceptional service and attention to detail, would hire again!</p>
               </div>
             </div>
+            
             <div class="card">
-              <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
+              <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
               <div>
-                <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
-                <p class="text-white">Amazing customer service, they really listen to your needs.</p>
-              </div>
-            </div>
-            <div class="card">
-                <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
-                  <p class="text-white">They did an outstanding job, highly recommended!</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Priya Shah</h3>
-                  <p class="text-white">Exceptional service and attention to detail, would hire again!</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
-                <div>
                   <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
                   <p class="text-white">Best in town, for marketing. Always available when needed.</p>
                 </div>
@@ -912,109 +1004,12 @@ margin-top: 20px;
               </div>
               
               <div class="card">
-                <img src="./assests/avatar/Rectangle 167.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
-                  <p class="text-white">Very proactive with excellent ideas and creatives. Highly satisfied!</p>
+                  <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+                  <div>
+                    <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                    <p class="text-white">They did an outstanding job, highly recommended!</p>
+                  </div>
                 </div>
-              </div>
-              
-              
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Aryan Verma</h3>
-                  <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
-                  <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Vikas Patel</h3>
-                  <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
-                  <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
-                  <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Manish Reddy</h3>
-                  <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Sana Malik</h3>
-                  <p class="text-white">Great service! Their team is always available when needed.</p>
-                </div>
-              </div>
-            </div>
-        </div>
-     </div>
-     <div class="marquee-row">
-      <div class="marquee-block marquee2">
-          <div class="marquee-item-list round-image">
-            <!-- Repeat this block for a seamless effect -->
-            <div class="card">
-                <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
-                  <p class="text-white">They did an outstanding job, highly recommended!</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Priya Shah</h3>
-                  <p class="text-white">Exceptional service and attention to detail, would hire again!</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
-                  <p class="text-white">Best in town, for marketing. Always available when needed.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
-                  <p class="text-white line-clamp-3">Professionalism and courtesy define them. A pleasant experience guaranteed.</p>
-                </div>
-              </div>
-              
               <div class="card">
                 <img src="./assests/avatar/Rectangle 167.png" alt="avatar">
                 <div>
@@ -1094,12 +1089,126 @@ margin-top: 20px;
                   <p class="text-white">Great service! Their team is always available when needed.</p>
                 </div>
               </div>
-          </div>
-     </div>
-  </div>
+              </div>
+      </div>
+     
+    <div class="logos mt-10  w-full overflow-hidden round-image">
+      <div class="logos-slide-right flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+            <div class="card">
+              <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+              <div>
+                <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+                <p class="text-white line-clamp-3">Professionalism and courtesy define them. A pleasant experience guaranteed.</p>
+              </div>
+            </div>
+            <div class="card">
+              <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
+              <div>
+                <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+                <p class="text-white">Best in local marketing and website development!</p>
+              </div>
+            </div>
+            <div class="card">
+                <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+                  <p class="text-white">They did an outstanding job, highly recommended!</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Priya Shah</h3>
+                  <p class="text-white">Exceptional service and attention to detail, would hire again!</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Ronit Banerjee</h3>
+                  <p class="text-white">Best in town, for marketing. Always available when needed.</p>
+                </div>
+              </div>
+              
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 167.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+                  <p class="text-white">Very proactive with excellent ideas and creatives. Highly satisfied!</p>
+                </div>
+              </div>
+              
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
+                  <p class="text-white">Amazing customer service, they really listen to your needs.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Aryan Verma</h3>
+                  <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
+                  <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Vikas Patel</h3>
+                  <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
+                  <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
+                  <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Manish Reddy</h3>
+                  <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
+                </div>
+              </div>
+              
+              <div class="card">
+                <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
+                <div>
+                  <h3 class="text-white/50 text-lg">Sana Malik</h3>
+                  <p class="text-white">Great service! Their team is always available when needed.</p>
+                </div>
+              </div>
+              </div>
+            </div>
 
   </div>
-      </div>
       <!-- schedule a call -->
       <div id="contact" class="w-full h-auto bg-cover bg-no-repeat py-16 flex flex-col justify-center items-center gap-10"
          style="background-image: url('./assests/Grid.png');">
