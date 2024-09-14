@@ -292,8 +292,8 @@
 }
       </style>
    </head>
-   <body class="max-w-[100vw] h-auto overflow-x-hidden">
-      <nav class="w-full bg-[#080910] px-[8vw] py-5 flex justify-center md:justify-center lg:justify-between xl:justify-between items-center">
+   <body class="max-w-[100vw] h-auto overflow-x-hidden relative" >
+      <nav class="w-full sticky top-0 z-30 bg-[#080910] px-[8vw] py-5 flex justify-center md:justify-center lg:justify-between xl:justify-between items-center">
          <img src="./assests/logo/Group 1.png" class="h-[7vh]" alt="logo" />
          <div class="hidden md:hidden lg:block xl:block">
             <ul class="flex gap-16 justify-start items-baseline text-white">
@@ -301,9 +301,11 @@
                <li class="font-normal"><a href="#about">About Us</a></li>
                <li class="font-normal"><a href="#contact">Contact Us</a></li>
                <li>
-                  <button class="text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
-                  Schedule A Call
-                  </button>
+                 <a href="https://calendly.com/gublu1991/client-meeting">
+                    <button class="text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
+                    Schedule A Call
+                    </button>
+                  </a>
                </li>
             </ul>
          </div>
@@ -311,16 +313,18 @@
       <!-- hero section -->
       <main
       id="home"
-         class="w-[100vw] h-auto overflow-x-hidden bg-[#080910] flex flex-col justify-center items-center pt-[5vh] xl:pt-[27vh] pb-[12vh] relative">
+         class="w-[100vw] h-auto overflow-x-hidden bg-[#080910] flex flex-col justify-center items-center pt-[5vh] xl:pt-[20vh] pb-[12vh] relative">
          <img src="./assests/logo/Rectangle 157.png" class="w-full absolute -top-14 md:-top-20 lg:-top-48 xl:-top-48" alt="gradient" />
          <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]"><span class="hidden md:hidden lg:inline-block xl:inline-block">" </span> We Help Businesses</p>
          <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]">
             To Scale And Become The Top 1% <span class="hidden md:hidden lg:inline-block xl:inline-block">"</span>
          </p>
          <div class="h-auto w-auto relative z-10 mt-7">
-            <button class="text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
-            Schedule A Call
-            </button>
+           <a href="https://calendly.com/gublu1991/client-meeting">
+              <button class="text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
+              Schedule A Call
+              </button>
+            </a>
             <div class="w-full h-full bg-[#28CBFF] absolute top-2 left-2 z-10"></div>
          </div>
          <div class="scroll-container w-full mt-20">
@@ -579,18 +583,15 @@
             <div class="font-extrabold text-[39.6px] md:text-[39.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[46px] md:leading-[46px] lg:leading-[75px] xl:leading-[75px]">Supercharge your <br>Business</div>
             <div>
                 <p class="text-lg md:text-lg lg:text-2xl xl:text-2xl text-[#fff]">Modern problems need modern solutions. <br> At Small Town Talks we provide hand- <br> tailored solutions for your business.</p>
-                <button class="text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
-                    Schedule A Call
+                <a href="https://calendly.com/gublu1991/client-meeting">
+                    <button class="text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
+                        Schedule A Call
                     </button>
+                </a>
             </div>
         </div>
 
         <!-- card animation -->
-
-        
-
-
-
         <div class="w-full h-auto bg-cover bg-no-repeat z-0 overflow-hidden hidden md:hidden lg:block xl:block" style="background-image: url('./assests/Frame\ 16.png');">
             <div class="container">
                 <div class="left-content-wrapper h-full flex justify-start items-center">
@@ -679,29 +680,29 @@
         
        </div>
        <div class=" sm:hidden flex flex-col items-center justify-center bg-[#080910] text-white text-center">
-        <div id="layer1" class="screen  top-0 sticky p-4 bg-[#080910]">
+        <div id="layer1" class="screen  top-10 sticky p-4 bg-[#080910]">
             <img src="./assests/item/illus-01.png"  alt="">
             <p class="text-4xl py-4 font-bold">Branding Solutions</p>
         </div>
-        <div id="layer2" class="screen  top-0 sticky p-4 bg-[#080910]">
+        <div id="layer2" class="screen  top-10 sticky p-4 bg-[#080910]">
             <img src="./assests/item/illus-02.png"  alt="">
             <p class="text-4xl py-4 font-bold">Performance Marketing</p>
         </div>
-        <div id="layer3" class="screen  top-0 sticky p-4 bg-[#080910]">
+        <div id="layer3" class="screen  top-10 sticky p-4 bg-[#080910]">
             <img src="./assests/item/illus-04.png"  alt="">
             <p class="text-4xl py-4 font-bold">UGC Ads Production </p>
         </div>
-        <div id="layer4" class="-screen  top-0 sticky p-4 bg-[#080910]">
+        <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
             <img src="./assests/item/illus-06.png"  alt="">
             <p class="text-4xl py-4 font-bold">Advanced Meta & Google Ads Funnel</p>
         </div>
-        <div id="layer4" class="-screen  top-0 sticky p-4 bg-[#080910]">
+        <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
           <img src="./assests/item/illus-03.png"  alt="">
           <p class="text-4xl py-4 font-bold">SEO & content optimization</p>
       </div>
-      <div id="layer4" class="-screen  top-0 sticky p-4 bg-[#080910]">
+      <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
         <img src="./assests/item/illus-05.png"  alt="">
-        <p class="text-4xl py-4 font-bold">ASoftware Development & IT Solutions</p>
+        <p class="text-4xl py-4 font-bold">Software Development & IT Solutions</p>
     </div>
     </div>
        
@@ -713,37 +714,44 @@
            <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#28CBFF]">
               Our Team
            </h1>
-        <div class="w-full flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center gap-10">
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[210px]">
-            <img src="./assests/Rectangle 152.png" alt="pic" class="w-full h-[210px] mx-auto">
+        <div class="w-full md:w-full lg:w-[80%] xl:w-[80%] mx-auto flex flex-wrap flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center gap-10">
+          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/Rectangle\ 152.png'); filter: grayscale(15);"></div>
             <div class="w-full flex flex-col justify-center items-center mt-3">
               <p class="text-[#fff] font-bold text-2xl">Supriyo Mitra</p>
               <p class="text-[#fff]/80 text-2xl white-wrap text-center">Founder, MD</p>
             </div>
           </div>
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[210px]">
-            <img src="./assests/Rectangle 153.png" alt="pic"  class="w-full h-[210px] mx-auto">
+          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/pranoy.jpeg'); filter: grayscale(15);"></div>
             <div class="w-full flex flex-col justify-center items-center mt-3">
               <p class="text-[#fff] font-bold text-2xl">Prnoy Dhar</p>
               <p class="text-[#fff]/80 text-2xl white-wrap text-center">Tech, Co-Founder</p>
             </div>
           </div>
-          <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[210px]">
-            <img src="./assests/google.jpeg" alt="pic"  class="w-full h-[210px] mx-auto " style="filter: grayscale(15);">
+          <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[300px]">
+            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/google.jpeg'); filter: grayscale(15);"></div>
             <div class="w-full flex flex-col justify-center items-center mt-3">
               <p class="text-[#fff] font-bold text-2xl">Sayantan Pal</p>
               <p class="text-[#fff]/80 text-2xl white-wrap text-center">Google & Meta Ads Expert.</p>
             </div>
           </div>
-          <div class="w-[250px] h-[300] md:h-[300px] lg:h-[210px] xl:h-[210px]">
-            <img src="./assests/graphic.jpeg" alt="pic"  class="w-full h-[210px] mx-auto" style="filter: grayscale(15);">
+          <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[300px]">
+            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/socialmedia.jpeg'); filter: grayscale(15);"></div>
+            <div class="w-full flex flex-col justify-center items-center mt-3">
+              <p class="text-[#fff] font-bold text-2xl">Sriparna Baidya</p>
+              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Social Media Strategist</p>
+            </div>
+          </div>
+          <div class="w-[250px] h-[300] md:h-[300px] lg:h-[210px] xl:h-[300px]">
+            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/graphcs.jpeg'); filter: grayscale(15);"></div>
             <div class="w-full flex flex-col justify-center items-center mt-3">
               <p class="text-[#fff] font-bold text-2xl">Priyanshu Saha.</p>
               <p class="text-[#fff]/80 text-2xl white-wrap text-center">Graphic and Video Editor</p>
             </div>
           </div>
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[210px]">
-            <img src="./assests/project.jpeg" alt="pic"  class=" w-full h-[210px] mx-auto" style="filter: grayscale(15);">
+          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/project.jpeg'); filter: grayscale(15);"></div>
             <div class="w-full flex flex-col justify-center items-center mt-3">
               <p class="text-[#fff] font-bold text-2xl">Koushik Maji</p>
               <p class="text-[#fff]/80 text-2xl white-wrap text-center">Project Head</p>
@@ -993,7 +1001,7 @@
                   </div>
                 </div>
            
-      <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-10 text-center capitalize text-[#fff]">
+      <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-3 text-center capitalize text-[#fff]">
         Trusted By 100+ Clients
      </h1>
      <div class="logos  w-full overflow-hidden round-image">
@@ -1236,22 +1244,36 @@
          <h1 class="font-extrabold text-[45.6px] md:text-[45.6px] lg:text-[72px] xl:text-[72px] leading-[60px] md text-center">Ready to Supercharge your Business?</h1>
          <div class="relative inline-block">
             <div class="absolute inset-0 translate-x-2 translate-y-2 bg-[#28CBFF]"></div>
-            <button class="relative px-5 md:px-5 lg:px-10 xl:px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
-            Schedule A Call
-            </button>
+            <a href="https://calendly.com/gublu1991/client-meeting">
+              <button class="relative px-5 md:px-5 lg:px-10 xl:px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
+                Schedule A Call
+                </button>
+            </a>
          </div>
       </div>
       <!-- footer -->
-      <footer class="bg-[#080910] w-full h-auto text-white flex flex-col justify-center items-center pt-10 pb-3 gap-1">
-         <h1 class=" text-lg">Contact</h1>
-         <p>supriyo@smalltowntalks.com</p>
-         <p>+91 8637008280</p>
-         <p class="w-full text-center">2972 Westheimer Rd. Santa Ana, Illinois 85486 </p>
+      <footer class="bg-[#080910] w-full h-auto text-white flex flex-col justify-center items-center pt-10 pb-3 gap-1 px-5">
+         <h1 class=" text-xl font-semibold">Contact</h1>
+         <a href="mailto:supriyo@smalltowntalks.com">supriyo@smalltowntalks.com</a>
+         <p class="mb-6">+91 8637008280</p>
+         <p class="w-full text-center">Austin tower, Street Number 692, AA II, Newtown, <br>Kolkata, New Town, West Bengal 700161</p>
+         <p class="w-full text-center my-2">Court More, Asansol, West Bengal 713304</p>
+         <p class="w-full text-center">2nd Floor, Block-A, The Horizon-2 49 G.T. Road, Nuruddin Road, More, <br>Asansol, West Bengal 713301</p>
+
          <div class="flex justify-center items-center gap-6 mt-2">
+          <a href="https://www.instagram.com/small.town.talks?igsh=MW0zMTNueXptaGdiZg==">
             <img src="./assests/social/Group 28.svg" alt="">
-            <img src="./assests/social/Vector.png" alt="">
+          </a>
+          <a href="https://www.facebook.com/share/MVNtioe1yEzN78KN/?mibextid=qi2Omg">
             <img src="./assests/social/Vector (1).png" alt="">
-            <img src="./assests/social/Vector (2).png" alt="">
+          </a>
+          <a href="https://www.linkedin.com/in/small-town-talks-19a0371ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+
+            <img src="./assests/social/Vector.png" alt="">
+          </a>
+            <a href="https://x.com/town_talks">
+              <img src="./assests/social/Vector (2).png" alt="">
+            </a>
          </div>
          <div class="relative py-3 mt-3 w-[80%]">
             <div class="border-t-4 border-transparent relative z-10 w-full text-center text-white/50 text-sm">
@@ -1262,6 +1284,9 @@
             </div>
          </div>
       </footer>
+      <a href="https://api.whatsapp.com/send?phone=918637008280" class="fixed bottom-2 md:bottom-2 lg:bottom-5 xl:bottom-5 right-4 md:right-4 lg:right-10 xl:right-10 z-50">
+        <img src="./assests/whatsapp.png" alt="whatsapp" class="h-[8vh] md:h-[8vh] lg:h-[10vh] xl:h-[10vh]">
+      </a>
    </body>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
