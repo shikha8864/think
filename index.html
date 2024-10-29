@@ -7,6 +7,8 @@
       <link rel="stylesheet" href="output.css" />
       <script src="https://cdn.tailwindcss.com"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <title>Think Different</title>
       <style>
         * {
@@ -296,11 +298,9 @@
                <li class="font-normal"><a href="#about">About Us</a></li>
                <li class="font-normal"><a href="#contact">Contact Us</a></li>
                <li>
-                 <a href="https://calendly.com/gublu1991/client-meeting">
-                    <button class="text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
+                    <button class="schedule-call-button text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
                     Schedule A Call
                     </button>
-                  </a>
                </li>
             </ul>
          </div>
@@ -315,13 +315,9 @@
             To Scale And Become The Top 1% <span class="hidden md:hidden lg:inline-block xl:inline-block">"</span>
          </p>
          <div class="h-auto w-auto relative z-10 mt-7">
-            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-           <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/gublu1991/client-meeting'});return false;">
-              <button class="text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
+              <button class="schedule-call-button text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
               Schedule A Call
               </button>
-            </a>
             <div class="w-full h-full bg-[#28CBFF] absolute top-2 left-2 z-10"></div>
          </div>
          <div class="scroll-container w-full mt-20">
@@ -590,11 +586,11 @@
             <div class="font-extrabold text-[39.6px] md:text-[39.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[46px] md:leading-[46px] lg:leading-[75px] xl:leading-[75px]">Supercharge your <br>Business</div>
             <div>
                 <p class="text-lg md:text-lg lg:text-2xl xl:text-2xl text-[#fff]">Modern problems need modern solutions. <br> At Small Town Talks we provide hand- <br> tailored solutions for your business.</p>
-                <a href="https://calendly.com/gublu1991/client-meeting">
-                    <button class="text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
+                
+                    <button class="schedule-call-button text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
                         Schedule A Call
                     </button>
-                </a>
+              
             </div>
         </div>
 
@@ -1257,11 +1253,9 @@
          <h1 class="font-extrabold text-[45.6px] md:text-[45.6px] lg:text-[72px] xl:text-[72px] leading-[60px] md text-center">Ready to Supercharge your Business?</h1>
          <div class="relative inline-block">
             <div class="absolute inset-0 translate-x-2 translate-y-2 bg-[#28CBFF]"></div>
-            <a href="https://calendly.com/gublu1991/client-meeting">
-              <button class="relative px-5 md:px-5 lg:px-10 xl:px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
+              <button class="schedule-call-button relative px-5 md:px-5 lg:px-10 xl:px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
                 Schedule A Call
                 </button>
-            </a>
          </div>
       </div>
       <!-- footer -->
@@ -1304,6 +1298,12 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
    <script>
+       document.querySelectorAll('.schedule-call-button').forEach(button => {
+            button.addEventListener('click', () => {
+                Calendly.initPopupWidget({ url: 'https://calendly.com/gublu1991/client-meeting' });
+                return false;
+            });
+        });
     //gsap
     gsap.registerPlugin(ScrollTrigger);
 
