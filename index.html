@@ -1,445 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <!-- Google Tag Manager --><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MVC8HD2V');</script><!-- End Google Tag Manager -->
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="output.css" />
-      <script src="https://cdn.tailwindcss.com"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-      <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <title>Think Different</title>
-      <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
 
-        @font-face {
-            font-family: 'trap';
-            src: url('./assests/Trap_V1.1/Trap-ExtraBold.otf') format('opentype');
-            font-weight: 900;
-            font-style: normal;
-        }
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MVC8HD2V');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="output.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+  <title>Think Different</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        @font-face {
-            font-family: 'trap';
-            src: url('./assests/Trap_V1.1/Trap-Bold.otf') format('opentype');
-            font-weight: 700;
-            font-style: normal;
-        }
+    @font-face {
+      font-family: 'trap';
+      src: url('./assests/Trap_V1.1/Trap-ExtraBold.otf') format('opentype');
+      font-weight: 900;
+      font-style: normal;
+    }
 
-        @font-face {
-            font-family: 'trap';
-            src: url('./assests/Trap_V1.1/Trap-Regular.otf') format('opentype');
-            font-weight: 400;
-            font-style: normal;
-        }
+    @font-face {
+      font-family: 'trap';
+      src: url('./assests/Trap_V1.1/Trap-Bold.otf') format('opentype');
+      font-weight: 700;
+      font-style: normal;
+    }
 
-
-
-        body {
-            font-family: 'trap', sans-serif;
-        }
+    @font-face {
+      font-family: 'trap';
+      src: url('./assests/Trap_V1.1/Trap-Regular.otf') format('opentype');
+      font-weight: 400;
+      font-style: normal;
+    }
 
 
-        .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-right: 60px;
-            min-width: 400px;
-            max-width: 400px;
-            text-wrap: wrap;
-        }
 
-        .card img {
-            height: 60px;
-        }
+    body {
+      font-family: 'trap', sans-serif;
+    }
 
-        .scroller-content img {
-            height: 60px;
-        }
-        .marquee-row {
-            width: 100vw;
-            overflow-x: hidden;
-        }
-        .marquee-block {
-            position: relative;
-            display: flex;
-            width: 100%; /* Set width to ensure items scroll off the screen */
-            animation-duration: 15s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
-            justify-content: flex-start; /* Ensure items scroll in a row */
-        }
 
-        /* Adjust the width for marquee-item-list to ensure scrolling works correctly */
-        .marquee-item-list {
-            display: inline-flex;
-            width: 100%;
-        }
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-right: 60px;
+      min-width: 400px;
+      max-width: 400px;
+      text-wrap: wrap;
+    }
 
-        .marquee-item-list img {
-            height: 80px;
-            padding: 10px 20px 0 20px;
-            margin-top: 20px;
-        }
+    .card img {
+      height: 60px;
+    }
 
-        .marquee1 { 
-            animation-name: marquee1; 
-        }
-        .marquee2 { 
-            animation-name: marquee2; 
-        }
+    .scroller-content img {
+      height: 60px;
+    }
 
-        @keyframes marquee1 {
-            0% { 
-                transform: translateX(0); 
-            }
-            100% { 
-                transform: translateX(-50%); /* Scroll by half the width */
-            }
-        }
+    .marquee-row {
+      width: 100vw;
+      overflow-x: hidden;
+    }
 
-        @keyframes marquee2 {
-            100% { 
-                transform: translateX(0); 
-            }
-            0% { 
-                transform: translateX(-50%); 
-            }
-        }
-
-/* Media Queries for Screen Size Adjustments */
-@media (min-width: 1200px) {
     .marquee-block {
+      position: relative;
+      display: flex;
+      width: 100%;
+      /* Set width to ensure items scroll off the screen */
+      animation-duration: 15s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      justify-content: flex-start;
+      /* Ensure items scroll in a row */
+    }
+
+    /* Adjust the width for marquee-item-list to ensure scrolling works correctly */
+    .marquee-item-list {
+      display: inline-flex;
+      width: 100%;
+    }
+
+    .marquee-item-list img {
+      height: 80px;
+      padding: 10px 20px 0 20px;
+      margin-top: 20px;
+    }
+
+    .marquee1 {
+      animation-name: marquee1;
+    }
+
+    .marquee2 {
+      animation-name: marquee2;
+    }
+
+    @keyframes marquee1 {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+        /* Scroll by half the width */
+      }
+    }
+
+    @keyframes marquee2 {
+      100% {
+        transform: translateX(0);
+      }
+
+      0% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Media Queries for Screen Size Adjustments */
+    @media (min-width: 1200px) {
+      .marquee-block {
         animation-duration: 20s;
+      }
     }
-}
-@media (min-width: 768px) and (max-width: 1199px) {
-    .marquee-block {
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+      .marquee-block {
         animation-duration: 15s;
+      }
     }
-}
-@media (max-width: 767px) {
-    .marquee-block {
+
+    @media (max-width: 767px) {
+      .marquee-block {
         animation-duration: 10s;
+      }
     }
-}
-@media (max-width: 480px) {
-    .marquee-block {
-        animation-duration: 3s; /* Adjust speed for smaller screens */
+
+    @media (max-width: 480px) {
+      .marquee-block {
+        animation-duration: 3s;
+        /* Adjust speed for smaller screens */
+      }
     }
-}
 
-        .round-image img{
-            border-radius: 50%;
-        }
-         .left-carousel-primary,
-         .left-carousel-secondary {
-         bottom: 10%;
-         left: 100%;
-         width: 100%;
-         overflow: hidden;
-         position: absolute;
-         white-space: nowrap;
-         }
-         .left-carousel-primary {
-         display: flex;
-         justify-content: space-around;
-         animation: scroll-horizontal 20s linear infinite;
-         }
-         .left-carousel-secondary {
-         animation: scroll-horizontal 20s linear infinite;
-         animation-delay: 10s;
-         }
-         @keyframes scroll-horizontal {
-         0% {
-         left: 100%;
-         }
-         100% {
-         left: -100%;
-         }
-         }
-         .container {
-            display: flex;
-            width: 100%;
-            height: 100vh; /* Each container takes full viewport height */
-            align-items: center;
-            padding: 100px;
-        }
+    .round-image img {
+      border-radius: 50%;
+    }
 
-        .left-content-wrapper {
-            width: 50%;
-            overflow-y: scroll;
-            height: 100%;
-        }
+    .left-carousel-primary,
+    .left-carousel-secondary {
+      bottom: 10%;
+      left: 100%;
+      width: 100%;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+    }
 
-        .left-content {
-            padding: 20px;
-            font-size: 18px;
-        }
+    .left-carousel-primary {
+      display: flex;
+      justify-content: space-around;
+      animation: scroll-horizontal 20s linear infinite;
+    }
 
-        .right-content {
-            width: 50%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .left-carousel-secondary {
+      animation: scroll-horizontal 20s linear infinite;
+      animation-delay: 10s;
+    }
 
-        .right-content img {
-            width: 30%;
-            height: auto;
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            opacity: 0;
-            transition: scale 0.5s ease-in-out;
-        }
+    @keyframes scroll-horizontal {
+      0% {
+        left: 100%;
+      }
 
-        /* Optional: To visually differentiate each section */
-        div::-webkit-scrollbar{
-            display: none;
-        }
-      
+      100% {
+        left: -100%;
+      }
+    }
 
-@keyframes slide {
-  from {
-    transform: translateX(0%);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-@keyframes slider {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(50%);
-  }
-}
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      /* Each container takes full viewport height */
+      align-items: center;
+      padding: 100px;
+    }
 
-.logos {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
-.logos {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
+    .left-content-wrapper {
+      width: 50%;
+      overflow-y: scroll;
+      height: 100%;
+    }
 
-.logos:before,
-.logos:after {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
-}
+    .left-content {
+      padding: 20px;
+      font-size: 18px;
+    }
+
+    .right-content {
+      width: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right-content img {
+      width: 30%;
+      height: auto;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: scale 0.5s ease-in-out;
+    }
+
+    /* Optional: To visually differentiate each section */
+    div::-webkit-scrollbar {
+      display: none;
+    }
 
 
+    @keyframes slide {
+      from {
+        transform: translateX(0%);
+      }
 
-.logos-slide-right {
-  display: inline-block;
-  animation:  slider infinite linear;
-}
+      to {
+        transform: translateX(-100%);
+      }
+    }
 
-.logos-slide-left {
-  display: inline-block;
-  animation:  slide infinite linear;
-}
+    @keyframes slider {
+      from {
+        transform: translateX(-100%);
+      }
 
-@media (min-width: 1200px) {
-  .logos-slide-right, .logos-slide-left{
+      to {
+        transform: translateX(50%);
+      }
+    }
+
+    .logos {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .logos {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .logos:before,
+    .logos:after {
+      position: absolute;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+
+
+    .logos-slide-right {
+      display: inline-block;
+      animation: slider infinite linear;
+    }
+
+    .logos-slide-left {
+      display: inline-block;
+      animation: slide infinite linear;
+    }
+
+    @media (min-width: 1200px) {
+
+      .logos-slide-right,
+      .logos-slide-left {
         animation-duration: 30s;
+      }
     }
-}
-@media (min-width: 768px) and (max-width: 1199px) {
-  .logos-slide-right, .logos-slide-left {
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+
+      .logos-slide-right,
+      .logos-slide-left {
         animation-duration: 15s;
+      }
     }
-}
-@media (max-width: 767px) {
-  .logos-slide-right, .logos-slide-left {
+
+    @media (max-width: 767px) {
+
+      .logos-slide-right,
+      .logos-slide-left {
         animation-duration: 35s;
+      }
     }
-}
-@media (max-width: 480px) {
-  .logos-slide-right, .logos-slide-left{
-        animation-duration: 20s; /* Adjust speed for smaller screens */
+
+    @media (max-width: 480px) {
+
+      .logos-slide-right,
+      .logos-slide-left {
+        animation-duration: 20s;
+        /* Adjust speed for smaller screens */
+      }
     }
-}
 
-.logos-slide-left img {
-  height: 50px;
-}
+    .logos-slide-left img {
+      height: 50px;
+    }
 
-.logos-slide-right img {
-  height: 50px;
-}
-      </style>
-   </head>
-   <body class="max-w-[100vw] h-auto overflow-x-hidden relative" >
-      <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVC8HD2V"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
-      <nav class="w-full sticky top-0 z-30 bg-[#080910] px-[8vw] py-5 flex justify-center md:justify-center lg:justify-between xl:justify-between items-center">
-         <img src="./assests/logo/Group 1.png" class="h-[7vh]" alt="logo" />
-         <div class="hidden md:hidden lg:block xl:block">
-            <ul class="flex gap-16 justify-start items-baseline text-white">
-               <li class="font-normal"><a href="#home">Home</a></li>
-               <li class="font-normal"><a href="#about">About Us</a></li>
-               <li class="font-normal"><a href="#contact">Contact Us</a></li>
-               <li>
-                    <button class="schedule-call-button text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
-                    Schedule A Call
-                    </button>
-               </li>
-            </ul>
-         </div>
-      </nav>
-      <!-- hero section -->
-      <main
-      id="home"
-         class="w-[100vw] h-auto overflow-x-hidden bg-[#080910] flex flex-col justify-center items-center pt-[5vh] xl:pt-[20vh] pb-[12vh] relative">
-         <img src="./assests/logo/Rectangle 157.png" class="w-full absolute -top-14 md:-top-20 lg:-top-48 xl:-top-48" alt="gradient" />
-         <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]"><span class="hidden md:hidden lg:inline-block xl:inline-block">" </span> We Help Businesses</p>
-         <p class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]">
-            To Scale And Become The Top 1% <span class="hidden md:hidden lg:inline-block xl:inline-block">"</span>
-         </p>
-         <div class="h-auto w-auto relative z-10 mt-7">
-              <button class="schedule-call-button text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
-              Schedule A Call
-              </button>
-            <div class="w-full h-full bg-[#28CBFF] absolute top-2 left-2 z-10"></div>
-         </div>
-         <div class="scroll-container w-full mt-20">
-            <div class="left-carousel-primary text-white">
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl ">SEO Services</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Content Writing</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Social Media marketing</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Video shoot services</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Web development</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-               <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Google AdWords</div>
-            </div>
-            <!-- Duplicate items for seamless effect -->
-            <div class=" left-carousel-primary left-carousel-secondary text-white">
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">SEO Services</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Content Writing</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Social Media marketing</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Video shoot services</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Web development</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</div>
-                <div style="font-family: 'Times New Roman', Times, serif;" class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Google AdWords</div>
-             </div>
-         </div>
-         </div>
-      </main>
+    .logos-slide-right img {
+      height: 50px;
+    }
 
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: transparent;
+      white-space: nowrap;
+    }
 
+    .marquee-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 30s linear infinite;
+      color: white;
+      font-weight: 500;
+      margin-top: 30px;
+    }
 
+    @keyframes marquee {
+      0% {
+        transform: translate(0, 0);
+      }
 
-      <!-- clients -->
-       <div class="w-full h-auto py-10 bg-cover bg-no-repeat flex flex-col justify-center items-center" style="background-image: url('./assests/Grid.png');">
-          <div class="flex justify-center items-center">
-            <h1 class="text-xl md:text-xl lg:text-3xl xl:text-3xl font-bold">Scroll</h1>
-            <img src="./assests/Scroll.png" alt="scroll" class="h-[30px] md:h-[30px] lg:h-[50px] xl:h-[50px] w-auto">
-          </div>
-          <div class="my-10 py-10 bg-[#C9F2FF] w-[75%] md:w-[75%] lg:w-[88%] xl:w-[88%] mx-auto flex flex-col md:flex-col lg:flex-row xl:flex-row justify-around items-center md:text-center lg:text-start xl:text-start gap-10">
-            <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
-              <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[200px] text-center" data-end="11" id="counter1">0</div>
-              <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
-                <h2 class="text-2xl font-bold">SEO Projects</h2>
-                <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Rank Faster, Rank <br>Better</div>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
-              <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[200px] text-center" data-end="50" id="counter2">0</div>
-              <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
-                <h2 class="text-2xl font-bold">Websites</h2>
-                <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Modern Appeanling <br> websites to Kick-raise any <br> business</div>
-              </div>
-            </div>
-            <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
-              <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[250px] text-center" data-end="100" id="counter3">0</div>
-              <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
-                <h2 class="text-2xl font-bold">Clients</h2>
-                <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Modern Appeanling <br> websites to Kick-raise any <br> business</div>
-              </div>
-            </div>
-          </div>
-          <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#000]">
-            Our Clients
-         </h1>
+      100% {
+        transform: translate(-100%, 0);
+      }
+    }
+  </style>
+</head>
 
-         <div class="logos w-full overflow-hidden">
-          <div class="logos-slide-right flex gap-16 w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/JIS.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/raymond.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Jawed habib.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Rapido-Logo@3x.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Hero_MotoCorp_Logo.svg@3x.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/332432.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
-                    <img class="min-h-[65px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-          </div>
-         </div>
-         <div class="logos mt-10  w-full overflow-hidden">
-          <div class="logos-slide-left flex gap-16 w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
-            <img class="min-h-[65px] w-auto" src="./assests/client/JIS.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/raymond.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Jawed habib.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Rapido-Logo@3x.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Hero_MotoCorp_Logo.svg@3x.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/332432.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">              
-            <img class="min-h-[65px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
-            <img class="min-h-[65px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
-          </div>
+<body class="max-w-[100vw] h-auto overflow-x-hidden relative">
+  <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVC8HD2V"
+      height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript><!-- End Google Tag Manager (noscript) -->
+  <nav
+    class="w-full sticky top-0 z-30 bg-[#080910] px-[8vw] py-5 flex justify-center md:justify-center lg:justify-between xl:justify-between items-center">
+    <img src="./assests/logo/Group 1.png" class="h-[7vh]" alt="logo" />
+    <div class="hidden md:hidden lg:block xl:block">
+      <ul class="flex gap-16 justify-start items-baseline text-white">
+        <li class="font-normal"><a href="#home">Home</a></li>
+        <li class="font-normal"><a href="#about">About Us</a></li>
+        <li class="font-normal"><a href="#contact">Contact Us</a></li>
+        <li>
+          <button class="schedule-call-button text-black bg-[#28CBFF] px-7 py-4 text-xl font-bold">
+            Schedule A Call
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- hero section -->
+  <main id="home"
+    class="w-[100vw] h-auto overflow-x-hidden bg-[#080910] flex flex-col justify-center items-center pt-[5vh] xl:pt-[20vh] pb-[5vh] relative">
+    <img src="./assests/logo/Rectangle 157.png" class="w-full absolute -top-14 md:-top-20 lg:-top-48 xl:-top-48"
+      alt="gradient" />
+    <p
+      class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]">
+      <span class="hidden md:hidden lg:inline-block xl:inline-block">" </span> We Help Businesses</p>
+    <p
+      class="text-white text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] font-bold text-center md:text-center lg:text-start xl:text-start w-full md:w-full lg:w-auto xl:w-auto leading-[65px] md:leading-[65px] lg:leading-[95px] xl:leading-[95px]">
+      To Scale And Become The Top 1% <span class="hidden md:hidden lg:inline-block xl:inline-block">"</span>
+    </p>
+    <div class="h-auto w-auto relative z-10 mt-7">
+      <button
+        class="schedule-call-button text-black bg-[#fff] px-5 md:px-5 lg:px-10 xl:px-10 py-3 md:py-3 lg:py-6 xl:py-6 text-2xl md:text-2xl lg:text-3xl xl:text-3xl font-bold z-20 border-black border-[2px] relative">
+        Schedule A Call
+      </button>
+      <div class="w-full h-full bg-[#28CBFF] absolute top-2 left-2 z-10"></div>
+    </div>
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl ">SEO Services</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Content Writing</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Social Media marketing</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Video shoot services</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Web development</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Google AdWords</span>
+        <!-- Duplicate items for seamless effect -->
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">SEO Services</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Content Writing</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Social Media marketing</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Video shoot services</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Web development</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">•</span>
+        <span style="font-family: 'Times New Roman', Times, serif;"
+          class="mr-4 item whitespace-nowrap text-base md:text-base lg:text-xl xl:text-xl">Google AdWords</span>
       </div>
+    </div>
+  </main>
 
-         <!-- <div class="marquee-row">
+
+
+
+  <!-- clients -->
+  <div class="w-full h-auto py-10 bg-cover bg-no-repeat flex flex-col justify-center items-center"
+    style="background-image: url('./assests/Grid.png');">
+    <div class="flex justify-center items-center">
+      <h1 class="text-xl md:text-xl lg:text-3xl xl:text-3xl font-bold">Scroll</h1>
+      <img src="./assests/Scroll.png" alt="scroll" class="h-[30px] md:h-[30px] lg:h-[50px] xl:h-[50px] w-auto">
+    </div>
+    <div
+      class="my-10 py-10 bg-[#C9F2FF] w-[75%] md:w-[75%] lg:w-[88%] xl:w-[88%] mx-auto flex flex-col md:flex-col lg:flex-row xl:flex-row justify-around items-center md:text-center lg:text-start xl:text-start gap-10">
+      <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
+        <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[200px] text-center"
+          data-end="11" id="counter1">0</div>
+        <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
+          <h2 class="text-2xl font-bold">SEO Projects</h2>
+          <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Rank Faster, Rank
+            <br>Better</div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
+        <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[200px] text-center"
+          data-end="50" id="counter2">0</div>
+        <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
+          <h2 class="text-2xl font-bold">Websites</h2>
+          <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Modern Appeanling <br>
+            websites to Kick-raise any <br> business</div>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center">
+        <div class="text-8xl md:text-8xl lg:text-9xl xl:text-9xl font-bold counter pr-8 w-[250px] text-center"
+          data-end="100" id="counter3">0</div>
+        <div class="flex flex-col gap-2 text-center md:text-center lg:text-start xl:text-start">
+          <h2 class="text-2xl font-bold">Clients</h2>
+          <div class="text-lg leading-5 text-center md:text-center lg:text-start xl:text-start">Modern Appeanling <br>
+            websites to Kick-raise any <br> business</div>
+        </div>
+      </div>
+    </div>
+    <h1
+      class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#000]">
+      Our Clients
+    </h1>
+
+    <div class="logos w-full overflow-hidden">
+      <div class="logos-slide-right flex gap-16 w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+        <img class="min-h-[65px] w-auto" src="./assests/client/JIS.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/raymond.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Jawed habib.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Rapido-Logo@3x.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Hero_MotoCorp_Logo.svg@3x.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
+      </div>
+    </div>
+    <div class="logos mt-10  w-full overflow-hidden">
+      <div class="logos-slide-left flex gap-16 w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+        <img class="min-h-[65px] w-auto" src="./assests/client/JIS.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/raymond.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Jawed habib.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Rapido-Logo@3x.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Hero_MotoCorp_Logo.svg@3x.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1werwer.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1rwerwer.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1343423.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/image 5234354.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1553454.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/ew34234.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1423423.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/332432.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1ttrertert.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Chulha Chowka logo 2-02.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1dfgfdgf.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-1342344.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/Untitled-32423.png" alt="Image 1">
+        <img class="min-h-[65px] w-auto" src="./assests/client/image 39 234234.png" alt="Image 1">
+      </div>
+    </div>
+
+    <!-- <div class="marquee-row">
             <div class="marquee-block marquee1">
                 <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/234234234-01.png" alt="Image 1">
@@ -463,7 +563,7 @@
          
             
           </div> -->
-         <!-- <div class="marquee-row sm:hidden">
+    <!-- <div class="marquee-row sm:hidden">
             <div class="marquee-block marquee1">
                 <div class="marquee-item-list">
                     <img class="min-h-[80px] w-auto" src="./assests/client/332432.png" alt="Image 1">
@@ -577,805 +677,865 @@
             </div>
          </div> -->
 
-       </div>
+  </div>
 
 
 
-       <div class="w-full overflow-hidden">
-        <div class="w-full bg-[#080910] py-10 flex flex-col md:flex-col lg:flex-row xl:flex-row justify-between px-[8vw] items-start z-10">
-            <div class="font-extrabold text-[39.6px] md:text-[39.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[46px] md:leading-[46px] lg:leading-[75px] xl:leading-[75px]">Supercharge your <br>Business</div>
-            <div>
-                <p class="text-lg md:text-lg lg:text-2xl xl:text-2xl text-[#fff]">Modern problems need modern solutions. <br> At Small Town Talks we provide hand- <br> tailored solutions for your business.</p>
-                
-                    <button class="schedule-call-button text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
-                        Schedule A Call
-                    </button>
-              
-            </div>
-        </div>
+  <div class="w-full overflow-hidden">
+    <div
+      class="w-full bg-[#080910] py-10 flex flex-col md:flex-col lg:flex-row xl:flex-row justify-between px-[8vw] items-start z-10">
+      <div
+        class="font-extrabold text-[39.6px] md:text-[39.6px] lg:text-[72px] xl:text-[72px] text-start capitalize text-[#28CBFF] leading-[46px] md:leading-[46px] lg:leading-[75px] xl:leading-[75px]">
+        Supercharge your <br>Business</div>
+      <div>
+        <p class="text-lg md:text-lg lg:text-2xl xl:text-2xl text-[#fff]">Modern problems need modern solutions. <br> At
+          Small Town Talks we provide hand- <br> tailored solutions for your business.</p>
 
-        <!-- card animation -->
-        <div class="w-full h-auto bg-cover bg-no-repeat z-0 overflow-hidden hidden md:hidden lg:block xl:block" style="background-image: url('./assests/Frame\ 16.png');">
-            <div class="container">
-                <div class="left-content-wrapper h-full flex justify-start items-center">
-                    <div class="left-content text-white">
-                        <h2 class="text-6xl font-bold">Branding <br> Solutions</h2>
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="./assests/item/illus-01.png" alt="Image 1" class="image-1">
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="left-content-wrapper">
-                    <div class="left-content">
-                        <h2 class="text-white text-7xl font-bold">Performance
-                            <br>
-                            Marketing</h2>
+        <button
+          class="schedule-call-button text-[#28CBFF] bg-[#080910] mt-2 px-10 py-3 w-full md:w-full lg:w-auto xl:w-auto text-3xl font-bold z-20 border-[#28CBFF] border-[1px] relative">
+          Schedule A Call
+        </button>
 
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="./assests/item/illus-02.png" alt="Image 2" class="image-2">
-                </div>
-            </div>
-            
-            <div class="container">
-                <div class="left-content-wrapper">
-                    <div class="left-content">
-                        <h2 class="text-7xl font-bold text-white">UGC Ads
-                            <br>
-                            Production </h2>
-
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="./assests/item/illus-04.png" alt="Image 3" class="image-3">
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="left-content-wrapper">
-                    <div class="left-content">
-                        <h2 class="text-7xl font-bold text-white">Advanced Meta &
-                                <br>
-                            Google Ads Funnel
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="./assests/item/illus-06.png" alt="Image 3" class="image-3">
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="left-content-wrapper">
-                    <div class="left-content">
-                        <h2 class="text-7xl font-bold text-white">SEO & content
-                            <br>
-                            optimization
-
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="./assests/item/illus-03.png" alt="Image 3" class="image-3">
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="left-content-wrapper">
-                    <div class="left-content">
-                        <h2 class="text-7xl font-bold text-white">Software
-                                <br>
-                            Development &
-                                <br>
-                            IT Solutions</h2>
-
-                    </div>
-                </div>
-                <div class="right-content">
-                    <img src="./assests/item/illus-05.png" alt="Image 3" class="image-3">
-                </div>
-            </div>
-
-            
-        </div>
-        
-       </div>
-       <div class=" block md:block lg:hidden xl:hidden flex flex-col items-center justify-center bg-[#080910] text-white text-center">
-        <div id="layer1" class="screen  top-10 sticky p-4 bg-[#080910]">
-            <img src="./assests/item/illus-01.png"  alt="">
-            <p class="text-4xl py-4 font-bold">Branding Solutions</p>
-        </div>
-        <div id="layer2" class="screen  top-10 sticky p-4 bg-[#080910]">
-            <img src="./assests/item/illus-02.png"  alt="">
-            <p class="text-4xl py-4 font-bold">Performance Marketing</p>
-        </div>
-        <div id="layer3" class="screen  top-10 sticky p-4 bg-[#080910]">
-            <img src="./assests/item/illus-04.png"  alt="">
-            <p class="text-4xl py-4 font-bold">UGC Ads Production </p>
-        </div>
-        <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
-            <img src="./assests/item/illus-06.png"  alt="">
-            <p class="text-4xl py-4 font-bold">Advanced Meta & Google Ads Funnel</p>
-        </div>
-        <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
-          <img src="./assests/item/illus-03.png"  alt="">
-          <p class="text-4xl py-4 font-bold">SEO & content optimization</p>
       </div>
-      <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
-        <img src="./assests/item/illus-05.png"  alt="">
-        <p class="text-4xl py-4 font-bold">Software Development & IT Solutions</p>
     </div>
+
+    <!-- card animation -->
+    <div class="w-full h-auto bg-cover bg-no-repeat z-0 overflow-hidden hidden md:hidden lg:block xl:block"
+      style="background-image: url('./assests/Frame\ 16.png');">
+      <div class="container">
+        <div class="left-content-wrapper h-full flex justify-start items-center">
+          <div class="left-content text-white">
+            <h2 class="text-6xl font-bold">Branding <br> Solutions</h2>
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="./assests/item/illus-01.png" alt="Image 1" class="image-1">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="left-content-wrapper">
+          <div class="left-content">
+            <h2 class="text-white text-7xl font-bold">Performance
+              <br>
+              Marketing
+            </h2>
+
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="./assests/item/illus-02.png" alt="Image 2" class="image-2">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="left-content-wrapper">
+          <div class="left-content">
+            <h2 class="text-7xl font-bold text-white">UGC Ads
+              <br>
+              Production
+            </h2>
+
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="./assests/item/illus-04.png" alt="Image 3" class="image-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="left-content-wrapper">
+          <div class="left-content">
+            <h2 class="text-7xl font-bold text-white">Advanced Meta &
+              <br>
+              Google Ads Funnel
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="./assests/item/illus-06.png" alt="Image 3" class="image-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="left-content-wrapper">
+          <div class="left-content">
+            <h2 class="text-7xl font-bold text-white">SEO & content
+              <br>
+              optimization
+
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="./assests/item/illus-03.png" alt="Image 3" class="image-3">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="left-content-wrapper">
+          <div class="left-content">
+            <h2 class="text-7xl font-bold text-white">Software
+              <br>
+              Development &
+              <br>
+              IT Solutions
+            </h2>
+
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="./assests/item/illus-05.png" alt="Image 3" class="image-3">
+        </div>
+      </div>
+
+
     </div>
-       
-
-
-
-      <!-- our team -->
-      <div class=" w-full h-auto flex flex-col bg-[#080910] pb-28">
-           <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#28CBFF]">
-              Our Team
-           </h1>
-        <div class="w-full md:w-full lg:w-[80%] xl:w-[80%] mx-auto flex flex-wrap flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center gap-10">
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/Rectangle\ 152.png'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Supriyo Mitra</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Founder, MD</p>
-            </div>
-          </div>
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/pranoy.jpeg'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Prnoy Dhar</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Tech, Co-Founder</p>
-            </div>
-          </div>
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/project.jpeg'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Koushik Maji</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Project Head</p>
-            </div>
-          </div>
-          <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/google.jpeg'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Sayantan Pal</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Google & Meta Ads Expert.</p>
-            </div>
-          </div>
-          <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/client/operation.jpg'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Apramit Roy</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Operations Head</p>
-            </div>
-          </div>
-          <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/socialmedia.jpeg'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Sriparna Baidya</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Social Media Strategist</p>
-            </div>
-          </div>
-          <div class="w-[250px] h-[300] md:h-[300px] lg:h-[210px] xl:h-[300px]">
-            <div class="w-full bg-cover bg-no-repeat h-[200px]" style="background-image: url('./assests/graphcs.jpeg'); filter: grayscale(15);"></div>
-            <div class="w-full flex flex-col justify-center items-center mt-3">
-              <p class="text-[#fff] font-bold text-2xl">Priyanshu Saha.</p>
-              <p class="text-[#fff]/80 text-2xl white-wrap text-center">Graphic and Video Editor</p>
-            </div>
-          </div>
-          
-      </div>
-      
-      </div>
-      <!-- about us -->
-      <div class=" w-full h-auto py-16 flex flex-col justify-center items-center gap-10 bg-[#080910]" id="about">
-         <div class="w-full h-auto pb-16 flex flex-col justify-center items-center gap-10 bg-[#080910]">
-            <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px]  text-center capitalize text-[#28CBFF]">Whats the town
-               Talking’<br>‘About us?
-            </h1>
-         </div>
-
-         <div class="logos  w-full overflow-hidden round-image">
-          <div class="logos-slide-left flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
-                <!-- Repeat this block for a seamless effect -->
-                
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
-                  <div>
-                    <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
-                    <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service provider is someone who would knock the business at the appropriate time rather than the business managers calling them for updates. You handover work to Small Town Talks... More</p>
-                  </div>
-                </div>
-                
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-                  <div>
-                      <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
-                      <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives are also very nice</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
-                      <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                      <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                      <div>
-                        <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
-                        <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic insights in navigating these platforms are truly commendable.</p>
-                      </div>
-                    </div>
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 167.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Roni Sarraf</h3>
-                      <p class="text-white">Very proactive with excellent ideas and creatives. Highly satisfied!</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Fardin Khan</h3>
-                      <p class="text-white">Best in local marketing and website development!</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
-                      <p class="text-white">Amazing customer service, they really listen to your needs.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Aryan Verma</h3>
-                      <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
-                      <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Vikas Patel</h3>
-                      <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
-                      <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
-                      <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Manish Reddy</h3>
-                      <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Sana Malik</h3>
-                      <p class="text-white">Great service! Their team is always available when needed.</p>
-                    </div>
-                  </div>
-                  </div>
-          </div>
-         
-        <div class="logos mt-10  w-full overflow-hidden round-image">
-          <div class="logos-slide-right flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-                  <div>
-                    <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
-                    <p class="text-white line-clamp-3">Professionalism and courtesy define them. A pleasant experience guaranteed.</p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
-                  <div>
-                    <h3 class="text-white/50 text-lg">Fardin Khan</h3>
-                    <p class="text-white">Best in local marketing and website development!</p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
-                  <div>
-                    <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
-                    <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service provider is someone who would knock the business at the appropriate time rather than the business managers calling them for updates. You handover work to Small Town Talks... More</p>
-                  </div>
-                </div>
-                
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-                  <div>
-                      <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
-                      <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives are also very nice</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
-                      <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                      <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                      <div>
-                        <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
-                        <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic insights in navigating these platforms are truly commendable.</p>
-                      </div>
-                    </div>
-                  
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
-                      <p class="text-white">Amazing customer service, they really listen to your needs.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Aryan Verma</h3>
-                      <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
-                      <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Vikas Patel</h3>
-                      <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
-                      <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
-                      <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Manish Reddy</h3>
-                      <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
-                    </div>
-                  </div>
-                  
-                  <div class="card">
-                    <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Sana Malik</h3>
-                      <p class="text-white">Great service! Their team is always available when needed.</p>
-                    </div>
-                  </div>
-                  </div>
-                </div>
-           
-      <h1 class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-3 text-center capitalize text-[#fff]">
-        Trusted By 100+ Clients
-     </h1>
-     <div class="logos  w-full overflow-hidden round-image">
-      <div class="logos-slide-left flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
-            <!-- Repeat this block for a seamless effect -->
-            
-            <div class="card">
-              <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-              <div>
-                <h3 class="text-white/50 text-lg">Priya Shah</h3>
-                <p class="text-white">Exceptional service and attention to detail, would hire again!</p>
-              </div>
-            </div>
-            
-            <div class="card">
-              <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
-              <div>
-                <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
-                <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service provider is someone who would knock the business at the appropriate time rather than the business managers calling them for updates. You handover work to Small Town Talks... More</p>
-              </div>
-            </div>
-            
-            <div class="card">
-              <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-              <div>
-                  <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
-                  <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives are also very nice</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
-                  <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                  <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                  <div>
-                    <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
-                    <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic insights in navigating these platforms are truly commendable.</p>
-                  </div>
-                </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Fardin Khan</h3>
-                  <p class="text-white">Best in local marketing and website development!</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
-                  <p class="text-white">Amazing customer service, they really listen to your needs.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Aryan Verma</h3>
-                  <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
-                  <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Vikas Patel</h3>
-                  <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
-                  <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
-                  <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Manish Reddy</h3>
-                  <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Sana Malik</h3>
-                  <p class="text-white">Great service! Their team is always available when needed.</p>
-                </div>
-              </div>
-              </div>
-      </div>
-     
-    <div class="logos mt-10  w-full overflow-hidden round-image">
-      <div class="logos-slide-right flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
-            <div class="card">
-              <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-              <div>
-                <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
-                <p class="text-white line-clamp-3">Professionalism and courtesy define them. A pleasant experience guaranteed.</p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
-              <div>
-                <h3 class="text-white/50 text-lg">Fardin Khan</h3>
-                <p class="text-white">Best in local marketing and website development!</p>
-              </div>
-            </div>
-            <div class="card">
-                <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
-                  <p class="text-white">They did an outstanding job, highly recommended!</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
-                  <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service provider is someone who would knock the business at the appropriate time rather than the business managers calling them for updates. You handover work to Small Town Talks... More</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
-                <div>
-                    <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
-                    <p class="text-white line-clamp-2" >The happy playce - they are very proactive and their ideas and creatives are also very nice</p>
-                  </div>
-                </div>
-                
-                <div class="card">
-                  <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
-                  <div>
-                    <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
-                    <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
-                  </div>
-                </div>
-                
-                <div class="card">
-                    <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
-                    <div>
-                      <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
-                      <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic insights in navigating these platforms are truly commendable.</p>
-                    </div>
-                  </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Aryan Verma</h3>
-                  <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
-                  <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Vikas Patel</h3>
-                  <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
-                  <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
-                  <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Manish Reddy</h3>
-                  <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
-                </div>
-              </div>
-              
-              <div class="card">
-                <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
-                <div>
-                  <h3 class="text-white/50 text-lg">Sana Malik</h3>
-                  <p class="text-white">Great service! Their team is always available when needed.</p>
-                </div>
-              </div>
-              </div>
-            </div>
 
   </div>
-      <!-- schedule a call -->
-      <div id="contact" class="w-full h-auto bg-cover bg-no-repeat py-16 flex flex-col justify-center items-center gap-10"
-         style="background-image: url('./assests/Grid.png');">
-         <h1 class="font-extrabold text-[45.6px] md:text-[45.6px] lg:text-[72px] xl:text-[72px] leading-[60px] md text-center">Ready to Supercharge your Business?</h1>
-         <div class="relative inline-block">
-            <div class="absolute inset-0 translate-x-2 translate-y-2 bg-[#28CBFF]"></div>
-              <button class="schedule-call-button relative px-5 md:px-5 lg:px-10 xl:px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
-                Schedule A Call
-                </button>
-         </div>
+  <div
+    class=" block md:block lg:hidden xl:hidden flex flex-col items-center justify-center bg-[#080910] text-white text-center">
+    <div id="layer1" class="screen  top-10 sticky p-4 bg-[#080910]">
+      <img src="./assests/item/illus-01.png" alt="">
+      <p class="text-4xl py-4 font-bold">Branding Solutions</p>
+    </div>
+    <div id="layer2" class="screen  top-10 sticky p-4 bg-[#080910]">
+      <img src="./assests/item/illus-02.png" alt="">
+      <p class="text-4xl py-4 font-bold">Performance Marketing</p>
+    </div>
+    <div id="layer3" class="screen  top-10 sticky p-4 bg-[#080910]">
+      <img src="./assests/item/illus-04.png" alt="">
+      <p class="text-4xl py-4 font-bold">UGC Ads Production </p>
+    </div>
+    <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
+      <img src="./assests/item/illus-06.png" alt="">
+      <p class="text-4xl py-4 font-bold">Advanced Meta & Google Ads Funnel</p>
+    </div>
+    <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
+      <img src="./assests/item/illus-03.png" alt="">
+      <p class="text-4xl py-4 font-bold">SEO & content optimization</p>
+    </div>
+    <div id="layer4" class="-screen  top-10 sticky p-4 bg-[#080910]">
+      <img src="./assests/item/illus-05.png" alt="">
+      <p class="text-4xl py-4 font-bold">Software Development & IT Solutions</p>
+    </div>
+  </div>
+
+
+
+
+  <!-- our team -->
+  <div class=" w-full h-auto flex flex-col bg-[#080910] pb-28">
+    <h1
+      class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] text-center capitalize text-[#28CBFF]">
+      Our Team
+    </h1>
+    <div
+      class="w-full md:w-full lg:w-[80%] xl:w-[80%] mx-auto flex flex-wrap flex-col md:flex-col lg:flex-row xl:flex-row justify-center items-center gap-10">
+      <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/Rectangle\ 152.png'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Supriyo Mitra</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Founder, MD</p>
+        </div>
       </div>
-      <!-- footer -->
-      <footer class="bg-[#080910] w-full h-auto text-white flex flex-col justify-center items-center pt-10 pb-3 gap-1 px-5">
-         <h1 class=" text-xl font-semibold">Contact</h1>
-         <a href="mailto:supriyo@smalltowntalks.com">supriyo@smalltowntalks.com</a>
-         <p class="mb-6">+91 8637008280</p>
-         <p class="w-full text-center">Austin tower, Street Number 692, AA II, Newtown, <br>Kolkata, New Town, West Bengal 700161</p>
-         <p class="w-full text-center my-2">Court More, Asansol, West Bengal 713304</p>
-         <p class="w-full text-center">2nd Floor, Block-A, The Horizon-2 49 G.T. Road, Nuruddin Road, More, <br>Asansol, West Bengal 713301</p>
+      <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/pranoy.jpeg'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Prnoy Dhar</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Tech, Co-Founder</p>
+        </div>
+      </div>
+      <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/project.jpeg'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Koushik Maji</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Project Head</p>
+        </div>
+      </div>
+      <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/google.jpeg'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Sayantan Pal</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Google & Meta Ads Expert.</p>
+        </div>
+      </div>
+      <div class="w-[250px] h-[270px] md:h-[270px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/client/operation.jpg'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Apramit Roy</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Operations Head</p>
+        </div>
+      </div>
+      <div class="w-[250px] h-[300px] md:h-[300px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/socialmedia.jpeg'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Sriparna Baidya</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Social Media Strategist</p>
+        </div>
+      </div>
+      <div class="w-[250px] h-[300] md:h-[300px] lg:h-[210px] xl:h-[300px]">
+        <div class="w-full bg-cover bg-no-repeat h-[200px]"
+          style="background-image: url('./assests/graphcs.jpeg'); filter: grayscale(15);"></div>
+        <div class="w-full flex flex-col justify-center items-center mt-3">
+          <p class="text-[#fff] font-bold text-2xl">Priyanshu Saha.</p>
+          <p class="text-[#fff]/80 text-2xl white-wrap text-center">Graphic and Video Editor</p>
+        </div>
+      </div>
 
-         <div class="flex justify-center items-center gap-6 mt-2">
-          <a href="https://www.instagram.com/small.town.talks?igsh=MW0zMTNueXptaGdiZg==">
-            <img src="./assests/social/Group 28.svg" alt="">
-          </a>
-          <a href="https://www.facebook.com/share/MVNtioe1yEzN78KN/?mibextid=qi2Omg">
-            <img src="./assests/social/Vector (1).png" alt="">
-          </a>
-          <a href="https://www.linkedin.com/in/small-town-talks-19a0371ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+    </div>
 
-            <img src="./assests/social/Vector.png" alt="">
-          </a>
-            <a href="https://x.com/town_talks">
-              <img src="./assests/social/Vector (2).png" alt="">
-            </a>
-         </div>
-         <div class="relative py-3 mt-3 w-[80%]">
-            <div class="border-t-4 border-transparent relative z-10 w-full text-center text-white/50 text-sm">
-               © 2023 small town talks, All rights reserved | Terms & Conditions • Privacy Policy
-            </div>
-            <div class="absolute inset-0 top-0 h-[1px] "
-               style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,203,255,1) 50%, rgba(8,9,16,1) 100%);">
-            </div>
-         </div>
-      </footer>
-      <a href="https://api.whatsapp.com/send?phone=918637008280" class="fixed bottom-2 md:bottom-2 lg:bottom-5 xl:bottom-5 right-4 md:right-4 lg:right-10 xl:right-10 z-50">
-        <img src="./assests/whatsapp.png" alt="whatsapp" class="h-[8vh] md:h-[8vh] lg:h-[10vh] xl:h-[10vh]">
+  </div>
+  <!-- about us -->
+  <div class=" w-full h-auto py-16 flex flex-col justify-center items-center gap-10 bg-[#080910]" id="about">
+    <div class="w-full h-auto pb-16 flex flex-col justify-center items-center gap-10 bg-[#080910]">
+      <h1
+        class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px]  text-center capitalize text-[#28CBFF]">
+        Whats the town
+        Talking’<br>‘About us?
+      </h1>
+    </div>
+
+    <div class="logos  w-full overflow-hidden round-image">
+      <div class="logos-slide-left flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+        <!-- Repeat this block for a seamless effect -->
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
+            <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service
+              provider is someone who would knock the business at the appropriate time rather than the business managers
+              calling them for updates. You handover work to Small Town Talks... More</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+            <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives
+              are also very nice</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
+            <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment
+              opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the
+              privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
+            <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing
+              first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic
+              insights in navigating these platforms are truly commendable.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 167.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Roni Sarraf</h3>
+            <p class="text-white">Very proactive with excellent ideas and creatives. Highly satisfied!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+            <p class="text-white">Best in local marketing and website development!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
+            <p class="text-white">Amazing customer service, they really listen to your needs.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aryan Verma</h3>
+            <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
+            <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Vikas Patel</h3>
+            <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
+            <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
+            <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Manish Reddy</h3>
+            <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Sana Malik</h3>
+            <p class="text-white">Great service! Their team is always available when needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="logos mt-10  w-full overflow-hidden round-image">
+      <div class="logos-slide-right flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+            <p class="text-white line-clamp-3">Professionalism and courtesy define them. A pleasant experience
+              guaranteed.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+            <p class="text-white">Best in local marketing and website development!</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
+            <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service
+              provider is someone who would knock the business at the appropriate time rather than the business managers
+              calling them for updates. You handover work to Small Town Talks... More</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+            <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives
+              are also very nice</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
+            <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment
+              opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the
+              privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
+            <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing
+              first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic
+              insights in navigating these platforms are truly commendable.</p>
+          </div>
+        </div>
+
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
+            <p class="text-white">Amazing customer service, they really listen to your needs.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aryan Verma</h3>
+            <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
+            <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Vikas Patel</h3>
+            <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
+            <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
+            <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Manish Reddy</h3>
+            <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Sana Malik</h3>
+            <p class="text-white">Great service! Their team is always available when needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1
+      class="font-extrabold text-[49.6px] md:text-[49.6px] lg:text-[72px] xl:text-[72px] px-3 text-center capitalize text-[#fff]">
+      Trusted By 100+ Clients
+    </h1>
+    <div class="logos  w-full overflow-hidden round-image">
+      <div class="logos-slide-left flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+        <!-- Repeat this block for a seamless effect -->
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Priya Shah</h3>
+            <p class="text-white">Exceptional service and attention to detail, would hire again!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
+            <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service
+              provider is someone who would knock the business at the appropriate time rather than the business managers
+              calling them for updates. You handover work to Small Town Talks... More</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+            <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives
+              are also very nice</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
+            <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment
+              opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the
+              privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
+            <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing
+              first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic
+              insights in navigating these platforms are truly commendable.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+            <p class="text-white">Best in local marketing and website development!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 169.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Surbhi Mehta</h3>
+            <p class="text-white">Amazing customer service, they really listen to your needs.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aryan Verma</h3>
+            <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
+            <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Vikas Patel</h3>
+            <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
+            <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
+            <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Manish Reddy</h3>
+            <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Sana Malik</h3>
+            <p class="text-white">Great service! Their team is always available when needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="logos mt-10  w-full overflow-hidden round-image">
+      <div class="logos-slide-right flex w-[400%] md:w-[300%] lg:w-[100%] xl:w-[100%]">
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aditya Bhaumik</h3>
+            <p class="text-white line-clamp-3">Professionalism and courtesy define them. A pleasant experience
+              guaranteed.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 168.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Fardin Khan</h3>
+            <p class="text-white">Best in local marketing and website development!</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Jatin Vaghasiya</h3>
+            <p class="text-white">They did an outstanding job, highly recommended!</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 165.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Siddartha Rray</h3>
+            <p class="text-white line-clamp-2">They are smart, proactive & very good at storytelling. A good service
+              provider is someone who would knock the business at the appropriate time rather than the business managers
+              calling them for updates. You handover work to Small Town Talks... More</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 164.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohini Sarraf</h3>
+            <p class="text-white line-clamp-2">The happy playce - they are very proactive and their ideas and creatives
+              are also very nice</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 166.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanay Chakraborty</h3>
+            <p class="text-white line-clamp-2">I am delighted to endorse Supriyo Mitra as a remarkable investment
+              opportunity for any discerning investor. As a previous beneficiary of funding myself, I have had the
+              privilege of witnessing Supriyo's entrepreneurial acumen firsthand.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 163.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Arihant Kothari</h3>
+            <p class="text-white line-clamp-2">I had the pleasure of knowing Supriyo as an Ads Consultant and seeing
+              first hand his exceptional expertise in Facebook and Google Ads. His profound knowledge and strategic
+              insights in navigating these platforms are truly commendable.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 171.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Aryan Verma</h3>
+            <p class="text-white">Great communication and work ethic. Will definitely work with them again.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 170.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Neha Kapoor</h3>
+            <p class="text-white">Highly reliable and professional. They exceeded my expectations.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 172.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Vikas Patel</h3>
+            <p class="text-white">Great team, very innovative solutions for our marketing campaign.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 173.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Rohan Gupta</h3>
+            <p class="text-white">Fantastic experience. Would recommend them to anyone.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 174.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Tanya Singhania</h3>
+            <p class="text-white">Their work speaks for itself. Brilliant execution and ideas.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 176.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Manish Reddy</h3>
+            <p class="text-white">Creative and professional. They helped take our business to the next level.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="./assests/avatar/Rectangle 175.png" alt="avatar">
+          <div>
+            <h3 class="text-white/50 text-lg">Sana Malik</h3>
+            <p class="text-white">Great service! Their team is always available when needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- schedule a call -->
+  <div id="contact" class="w-full h-auto bg-cover bg-no-repeat py-16 flex flex-col justify-center items-center gap-10"
+    style="background-image: url('./assests/Grid.png');">
+    <h1
+      class="font-extrabold text-[45.6px] md:text-[45.6px] lg:text-[72px] xl:text-[72px] leading-[60px] md text-center">
+      Ready to Supercharge your Business?</h1>
+    <div class="relative inline-block">
+      <div class="absolute inset-0 translate-x-2 translate-y-2 bg-[#28CBFF]"></div>
+      <button
+        class="schedule-call-button relative px-5 md:px-5 lg:px-10 xl:px-10 py-6 bg-[#080910] text-[#fff] text-3xl font-bold">
+        Schedule A Call
+      </button>
+    </div>
+  </div>
+  <!-- footer -->
+  <footer class="bg-[#080910] w-full h-auto text-white flex flex-col justify-center items-center pt-10 pb-3 gap-1 px-5">
+    <h1 class=" text-xl font-semibold">Contact</h1>
+    <a href="mailto:supriyo@smalltowntalks.com">supriyo@smalltowntalks.com</a>
+    <p class="mb-6">+91 8637008280</p>
+    <p class="w-full text-center">Austin tower, Street Number 692, AA II, Newtown, <br>Kolkata, New Town, West Bengal
+      700161</p>
+    <p class="w-full text-center my-2">Court More, Asansol, West Bengal 713304</p>
+    <p class="w-full text-center">2nd Floor, Block-A, The Horizon-2 49 G.T. Road, Nuruddin Road, More, <br>Asansol, West
+      Bengal 713301</p>
+
+    <div class="flex justify-center items-center gap-6 mt-2">
+      <a href="https://www.instagram.com/small.town.talks?igsh=MW0zMTNueXptaGdiZg==">
+        <img src="./assests/social/Group 28.svg" alt="">
       </a>
-   </body>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-   <script>
-       document.querySelectorAll('.schedule-call-button').forEach(button => {
-            button.addEventListener('click', () => {
-                Calendly.initPopupWidget({ url: 'https://calendly.com/gublu1991/client-meeting' });
-                return false;
-            });
-        });
-    //gsap
-    gsap.registerPlugin(ScrollTrigger);
+      <a href="https://www.facebook.com/share/MVNtioe1yEzN78KN/?mibextid=qi2Omg">
+        <img src="./assests/social/Vector (1).png" alt="">
+      </a>
+      <a
+        href="https://www.linkedin.com/in/small-town-talks-19a0371ab?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
 
-    // Select each right-side image
-    const images = document.querySelectorAll(".right-content img");
-
-    // Loop through each section and create a ScrollTrigger for each
-    images.forEach((image, index) => {
-        ScrollTrigger.create({
-            trigger: image.closest('.container'), // Trigger the animation when the container comes into view
-            start: "top center",  // Start when the top of the section hits the center of the viewport
-            end: "bottom center", // End when the bottom of the section reaches the center
-            scrub: true,  // Smoothly transition the animations
-            onEnter: () => {
-                // Fade in the image when the section comes into view
-                gsap.to(image, { opacity: 1 });
-            },
-            onLeave: () => {
-                // Fade out the image when the section leaves the view
-                gsap.to(image, { opacity: 0 });
-            },
-            onEnterBack: () => {
-                // Fade in the image when scrolling back up
-                gsap.to(image, { opacity: 1 });
-            },
-            onLeaveBack: () => {
-                // Fade out the image when leaving upwards
-                gsap.to(image, { opacity: 0 });
-            }
-        });
+        <img src="./assests/social/Vector.png" alt="">
+      </a>
+      <a href="https://x.com/town_talks">
+        <img src="./assests/social/Vector (2).png" alt="">
+      </a>
+    </div>
+    <div class="relative py-3 mt-3 w-[80%]">
+      <div class="border-t-4 border-transparent relative z-10 w-full text-center text-white/50 text-sm">
+        © 2023 small town talks, All rights reserved | Terms & Conditions • Privacy Policy
+      </div>
+      <div class="absolute inset-0 top-0 h-[1px] "
+        style="background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,203,255,1) 50%, rgba(8,9,16,1) 100%);">
+      </div>
+    </div>
+  </footer>
+  <a href="https://api.whatsapp.com/send?phone=918637008280"
+    class="fixed bottom-2 md:bottom-2 lg:bottom-5 xl:bottom-5 right-4 md:right-4 lg:right-10 xl:right-10 z-50">
+    <img src="./assests/whatsapp.png" alt="whatsapp" class="h-[8vh] md:h-[8vh] lg:h-[10vh] xl:h-[10vh]">
+  </a>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script>
+  document.querySelectorAll('.schedule-call-button').forEach(button => {
+    button.addEventListener('click', () => {
+      Calendly.initPopupWidget({ url: 'https://calendly.com/gublu1991/client-meeting' });
+      return false;
     });
-    // Function to handle counting
-    function startCounting(element, endValue) {
-        let count = 0;
-        const interval = 60; // Interval in milliseconds
+  });
+  //gsap
+  gsap.registerPlugin(ScrollTrigger);
 
-        function updateCounter() {
-            if (count < endValue) {
-                count++;
-                element.textContent = count;
-                setTimeout(updateCounter, interval);
-            }
-        }
+  // Select each right-side image
+  const images = document.querySelectorAll(".right-content img");
 
-        updateCounter();
+  // Loop through each section and create a ScrollTrigger for each
+  images.forEach((image, index) => {
+    ScrollTrigger.create({
+      trigger: image.closest('.container'), // Trigger the animation when the container comes into view
+      start: "top center",  // Start when the top of the section hits the center of the viewport
+      end: "bottom center", // End when the bottom of the section reaches the center
+      scrub: true,  // Smoothly transition the animations
+      onEnter: () => {
+        // Fade in the image when the section comes into view
+        gsap.to(image, { opacity: 1 });
+      },
+      onLeave: () => {
+        // Fade out the image when the section leaves the view
+        gsap.to(image, { opacity: 0 });
+      },
+      onEnterBack: () => {
+        // Fade in the image when scrolling back up
+        gsap.to(image, { opacity: 1 });
+      },
+      onLeaveBack: () => {
+        // Fade out the image when leaving upwards
+        gsap.to(image, { opacity: 0 });
+      }
+    });
+  });
+  // Function to handle counting
+  function startCounting(element, endValue) {
+    let count = 0;
+    const interval = 60; // Interval in milliseconds
+
+    function updateCounter() {
+      if (count < endValue) {
+        count++;
+        element.textContent = count;
+        setTimeout(updateCounter, interval);
+      }
     }
 
-    // Intersection Observer setup for multiple counters
-    const counters = document.querySelectorAll('.counter');
+    updateCounter();
+  }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            const endValue = parseInt(entry.target.getAttribute('data-end'));
+  // Intersection Observer setup for multiple counters
+  const counters = document.querySelectorAll('.counter');
 
-            if (entry.isIntersecting) {
-                // Reset text and start counting when it comes into view
-                entry.target.textContent = "10";
-                startCounting(entry.target, endValue);
-            } else {
-                // Remove data-counting attribute so it can count again later
-                entry.target.removeAttribute('data-counting');
-            }
-        });
-    }, { threshold: 0.5 });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const endValue = parseInt(entry.target.getAttribute('data-end'));
 
-    counters.forEach(counter => observer.observe(counter));
+      if (entry.isIntersecting) {
+        // Reset text and start counting when it comes into view
+        entry.target.textContent = "10";
+        startCounting(entry.target, endValue);
+      } else {
+        // Remove data-counting attribute so it can count again later
+        entry.target.removeAttribute('data-counting');
+      }
+    });
+  }, { threshold: 0.5 });
 
-    var elements = $('ul.marquee-item-list li').length;
-for(var i=0;i < elements; i++){
- $(".marquee-item-list").clone().prependTo( ".marquee-block" );
-};
-var liEle = [];
-var liEle = $(".marquee-item-list li");
+  counters.forEach(counter => observer.observe(counter));
+
+  var elements = $('ul.marquee-item-list li').length;
+  for (var i = 0; i < elements; i++) {
+    $(".marquee-item-list").clone().prependTo(".marquee-block");
+  };
+  var liEle = [];
+  var liEle = $(".marquee-item-list li");
 </script>
+
 </html>
